@@ -1,0 +1,573 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GitHub Pages vs Framer 对比 - AI 站长工作流目录</title>
+  <meta name="description" content="GitHub Pages 和 Framer 哪个更适合新手建站？从成本、代码要求、美观度、SEO 等维度帮你做决定。">
+  <style>
+    :root {
+      --bg: #f7f6f2;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --primary: #0f766e;
+      --primary-dark: #115e59;
+      --max-width: 1080px;
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(0,0,0,0.06);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC",
+        "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    a:hover {
+      color: var(--primary-dark);
+    }
+    .container {
+      width: min(100% - 32px, var(--max-width));
+      margin: 0 auto;
+    }
+    .site-header {
+      background: rgba(255,255,255,0.85);
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(12px);
+      z-index: 10;
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 0;
+    }
+    .logo {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .nav {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+    .nav a {
+      color: var(--muted);
+      font-size: 15px;
+      font-weight: 500;
+      padding: 4px 0;
+      border-bottom: 2px solid transparent;
+    }
+    .nav a:hover {
+      color: var(--text);
+    }
+    .nav a.active {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+    }
+    .breadcrumb {
+      padding: 16px 0 0;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .breadcrumb a {
+      color: var(--muted);
+    }
+    .breadcrumb a:hover {
+      color: var(--text);
+    }
+    .breadcrumb span {
+      color: var(--text);
+      font-weight: 500;
+    }
+    .hero {
+      padding: 40px 0 32px;
+    }
+    .eyebrow {
+      display: inline-block;
+      background: #ccfbf1;
+      color: #115e59;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: 38px;
+      line-height: 1.15;
+      margin: 0 0 14px;
+      font-weight: 700;
+    }
+    .hero .intro {
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 17px;
+      margin: 0 0 20px;
+    }
+    .quick-summary {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+      max-width: 760px;
+    }
+    .quick-summary strong {
+      color: var(--primary);
+      font-weight: 600;
+    }
+    .quick-summary p {
+      margin: 0;
+      font-size: 15px;
+      color: var(--text);
+    }
+    .section {
+      padding: 20px 0 56px;
+    }
+    .section-title {
+      font-size: 24px;
+      margin: 0 0 20px;
+      font-weight: 600;
+    }
+    .conclusion-box {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+    }
+    .conclusion-box p {
+      margin: 0 0 12px;
+      color: var(--text);
+      font-size: 16px;
+    }
+    .conclusion-box p:last-child {
+      margin-bottom: 0;
+    }
+    .table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+      min-width: 640px;
+    }
+    th, td {
+      padding: 14px 16px;
+      text-align: left;
+      font-size: 15px;
+      border-bottom: 1px solid var(--line);
+    }
+    th {
+      background: #f0fdfa;
+      font-weight: 600;
+      color: var(--primary-dark);
+    }
+    td {
+      color: var(--text);
+    }
+    tr:last-child td {
+      border-bottom: none;
+    }
+    .tag-framer {
+      display: inline-block;
+      background: #f0fdfa;
+      color: var(--primary);
+      padding: 2px 10px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .tag-gh {
+      display: inline-block;
+      background: #f0f9ff;
+      color: #0369a1;
+      padding: 2px 10px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .tag-neutral {
+      display: inline-block;
+      background: #f3f4f6;
+      color: var(--muted);
+      padding: 2px 10px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 500;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+    }
+    .card h3 {
+      margin: 0 0 14px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+    .card ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+    .card li {
+      margin-bottom: 4px;
+    }
+    .advice-box {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+    }
+    .advice-box p {
+      margin: 0 0 12px;
+      color: var(--text);
+      font-size: 16px;
+    }
+    .advice-box p:last-child {
+      margin-bottom: 0;
+    }
+    .compare-more-section {
+      padding: 20px 0 40px;
+    }
+    .compare-more-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+    }
+    .compare-more-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+    .compare-more-card:hover {
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+      transform: translateY(-2px);
+    }
+    .compare-more-card h4 {
+      margin: 0 0 8px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .compare-more-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    .cta-section {
+      text-align: center;
+      padding: 20px 0 64px;
+    }
+    .btn {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      transition: background 0.2s ease;
+      margin: 0 6px 10px;
+    }
+    .btn:hover {
+      background: var(--primary-dark);
+      color: #fff;
+    }
+    .btn-outline {
+      display: inline-block;
+      background: transparent;
+      color: var(--primary);
+      border: 1.5px solid var(--primary);
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      transition: background 0.2s ease;
+      margin: 0 6px 10px;
+    }
+    .btn-outline:hover {
+      background: #f0fdfa;
+      color: var(--primary-dark);
+    }
+    .site-footer {
+      border-top: 1px solid var(--line);
+      padding: 24px 0 40px;
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+    }
+    @media (max-width: 768px) {
+      h1 { font-size: 30px; }
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+      .hero {
+        padding-top: 24px;
+      }
+      th, td {
+        padding: 12px 14px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">AI 站长工作流目录</div>
+      <nav class="nav">
+        <a href="index.html">首页</a>
+        <a href="categories.html">分类页</a>
+        <a href="about.html">关于本站</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">首页</a> › <a href="categories.html">分类页</a> › <span>GitHub Pages vs Framer</span>
+      </div>
+    </div>
+
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow">建站工具对比</div>
+        <h1>GitHub Pages 和 Framer，新手该选哪个？</h1>
+        <p class="intro">
+          一个完全免费、但需要一点代码基础；一个视觉精致、但每月要付费。
+          这篇对比从 9 个实际维度帮你判断，哪个更适合你的第一个网站。
+        </p>
+        <div class="quick-summary">
+          <p><strong>一句话总结：</strong>预算为零、愿意学一点基础操作，选 GitHub Pages；预算充足、追求设计感、不想碰代码，选 Framer。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">先说结论</h2>
+        <div class="conclusion-box">
+          <p><strong>GitHub Pages</strong> 是「零成本建站方案」。你不需要买服务器、不需要买域名（可以用免费二级域名），只需要一个 GitHub 账号。适合想先验证想法、不急着赚钱、愿意花一点时间学习的人。</p>
+          <p><strong>Framer</strong> 是「设计师级别的建站工具」。你不需要写代码，拖拽就能做出非常好看的页面，但每月需要付费。适合对品牌视觉有要求、希望网站本身就是竞争力的人。</p>
+          <p>对中文出海新手来说，<strong>如果你还在犹豫要不要做这件事，先用 GitHub Pages 验证；如果你已经确定要做，且网站是你的门面，选 Framer。</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">9 个维度对比</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>对比维度</th>
+                <th>GitHub Pages</th>
+                <th>Framer</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>上手难度</td>
+                <td><span class="tag-neutral">中等</span> 需要学 Git 和基础 HTML</td>
+                <td><span class="tag-neutral">中等</span> 界面像设计软件，需适应</td>
+              </tr>
+              <tr>
+                <td>是否需要代码</td>
+                <td><span class="tag-gh">需要</span> 至少懂 HTML/CSS 基础</td>
+                <td><span class="tag-framer">不需要</span> 纯可视化编辑</td>
+              </tr>
+              <tr>
+                <td>上线速度</td>
+                <td><span class="tag-neutral">较慢</span> 需配置仓库和域名</td>
+                <td><span class="tag-framer">很快</span> 注册即开始设计</td>
+              </tr>
+              <tr>
+                <td>页面美观度</td>
+                <td><span class="tag-neutral">取决于你</span> 代码写得好就好看</td>
+                <td><span class="tag-framer">很高</span> 默认精致，动画原生</td>
+              </tr>
+              <tr>
+                <td>SEO 友好度</td>
+                <td><span class="tag-framer">很好</span> 静态页面，搜索引擎喜欢</td>
+                <td><span class="tag-framer">很好</span> 自动优化，结构清晰</td>
+              </tr>
+              <tr>
+                <td>维护成本</td>
+                <td><span class="tag-gh">极低</span> 免费托管，几乎零成本</td>
+                <td><span class="tag-neutral">中等</span> 每月 $15-30 订阅费</td>
+              </tr>
+              <tr>
+                <td>自定义自由度</td>
+                <td><span class="tag-gh">极高</span> 代码完全可控</td>
+                <td><span class="tag-framer">很高</span> 像素级控制，但受平台限制</td>
+              </tr>
+              <tr>
+                <td>适合什么人</td>
+                <td>技术爱好者、预算有限、愿意学习的人</td>
+                <td>设计师、产品人、追求视觉品质的创作者</td>
+              </tr>
+              <tr>
+                <td>长期成长性</td>
+                <td><span class="tag-gh">很高</span> 学会后可迁移到任何平台</td>
+                <td><span class="tag-neutral">中等</span> 技能锁定在 Framer 生态</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">如果你属于这几类人，选 GitHub Pages</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>💰 预算为零或极低</h3>
+            <ul>
+              <li>不想在网站上花一分钱</li>
+              <li>先验证想法，赚钱后再升级</li>
+              <li>学生或刚起步的创作者</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>🔧 愿意学一点技术</h3>
+            <ul>
+              <li>不排斥看教程和操作文档</li>
+              <li>愿意理解「仓库」「分支」「提交」这些概念</li>
+              <li>希望掌握一项可迁移的技能</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>📈 看重长期成长性</h3>
+            <ul>
+              <li>未来可能换平台或自建服务器</li>
+              <li>想理解网站背后的工作原理</li>
+              <li>不依赖单一平台，降低风险</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">如果你属于这几类人，选 Framer</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>🎨 视觉就是竞争力</h3>
+            <ul>
+              <li>网站是你的作品集或产品门面</li>
+              <li>客户/用户第一眼就要被吸引</li>
+              <li>愿意为设计品质付费</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>⏱️ 想尽快上线，不想学代码</h3>
+            <ul>
+              <li>时间比金钱更宝贵</li>
+              <li>不想碰任何技术细节</li>
+              <li>希望专注于内容而非搭建</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>💼 已有明确变现路径</h3>
+            <ul>
+              <li>已经知道怎么赚钱</li>
+              <li>网站是变现工具的一部分</li>
+              <li>每月 $15-30 的订阅费可以接受</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">我的建议</h2>
+        <div class="advice-box">
+          <p>如果你是<strong>第一次尝试建站</strong>，且<strong>不确定自己能不能坚持 3 个月以上</strong>，我强烈建议先用 GitHub Pages。它的成本是零，学习成本是一次性的，而且你学到的 Git 和 HTML 基础在未来任何平台都用得上。</p>
+          <p>如果你<strong>已经验证过市场需求</strong>，或者<strong>你的网站本身就是产品</strong>（比如设计服务、咨询、个人品牌），Framer 的投资回报率更高。一个好看的网站能直接帮你获得更多信任和转化。</p>
+          <p><strong>最务实的路径：</strong>先用 GitHub Pages 做一个 MVP 版本，跑通内容和流量；等有收入或明确需求后，再迁移到 Framer 做精致版。这样你既不会浪费钱，也不会因为技术门槛而拖延。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="compare-more-section">
+      <div class="container">
+        <h2 class="section-title">继续比较</h2>
+        <div class="compare-more-grid">
+          <a href="github-pages-vs-framer.html" style="display: block; text-decoration: none; color: inherit;">
+            <article class="compare-more-card">
+              <h4>GitHub Pages 和 Framer</h4>
+              <p>零成本代码方案 vs 付费设计工具</p>
+            </article>
+          </a>
+          <a href="wix-vs-wordpress.html" style="display: block; text-decoration: none; color: inherit;">
+            <article class="compare-more-card">
+              <h4>Wix 和 WordPress</h4>
+              <p>快速上线 vs 长期成长</p>
+            </article>
+          </a>
+          <a href="framer-vs-wordpress.html" style="display: block; text-decoration: none; color: inherit;">
+            <article class="compare-more-card">
+              <h4>Framer 和 WordPress</h4>
+              <p>设计师工具 vs 内容管理系统</p>
+            </article>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <a href="index.html" class="btn">返回首页</a>
+        <a href="categories.html" class="btn-outline">查看全部分类</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 AI 站长工作流目录 · 面向中文出海创作者的工具与工作流站。</p>
+    </div>
+  </footer>
+</body>
+</html>
