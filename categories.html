@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>分类页 - AI 站长工作流目录</title>
+  <meta name="description" content="查看建站、内容、SEO、设计、自动化和变现相关分类。">
+  <style>
+    :root { --bg: #f7f6f2; --card: #ffffff; --text: #1f2937; --muted: #6b7280; --line: #e5e7eb; --primary: #0f766e; --primary-dark: #115e59; --max-width: 1080px; --radius: 16px; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { color: var(--primary-dark); }
+    .container { width: min(100% - 32px, var(--max-width)); margin: 0 auto; }
+    .site-header { background: rgba(255,255,255,0.85); border-bottom: 1px solid var(--line); position: sticky; top: 0; backdrop-filter: blur(12px); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
+    .logo { font-size: 20px; font-weight: 700; color: var(--text); }
+    .nav { display: flex; gap: 18px; flex-wrap: wrap; }
+    .nav a { color: var(--muted); font-size: 15px; font-weight: 500; padding: 4px 0; border-bottom: 2px solid transparent; }
+    .nav a:hover { color: var(--text); }
+    .nav a.active { color: var(--primary); border-bottom-color: var(--primary); }
+    .hero { padding: 56px 0 24px; }
+    .eyebrow { display: inline-block; background: #ccfbf1; color: #115e59; padding: 6px 12px; border-radius: 999px; font-size: 13px; font-weight: 600; margin-bottom: 16px; }
+    h1 { font-size: 38px; line-height: 1.15; margin: 0 0 14px; font-weight: 700; }
+    .hero p { max-width: 760px; color: var(--muted); font-size: 17px; margin: 0; }
+    .section { padding: 20px 0 56px; }
+    .section-title { font-size: 24px; margin: 0 0 20px; font-weight: 600; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); transition: box-shadow 0.2s ease, transform 0.2s ease; }
+    .card:hover { box-shadow: 0 10px 28px rgba(0,0,0,0.08); transform: translateY(-2px); }
+    .card h2 { margin-top: 0; margin-bottom: 10px; font-size: 20px; font-weight: 600; }
+    .card p { margin: 0 0 14px; color: var(--muted); font-size: 15px; }
+    .card a { font-weight: 600; font-size: 15px; }
+    .compare-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
+    .compare-card { background: var(--card); border: 1.5px solid var(--primary); border-radius: var(--radius); padding: 24px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); transition: box-shadow 0.2s ease, transform 0.2s ease; }
+    .compare-card:hover { box-shadow: 0 10px 28px rgba(0,0,0,0.08); transform: translateY(-2px); }
+    .compare-label { display: inline-block; background: #ccfbf1; color: #115e59; padding: 4px 12px; border-radius: 999px; font-size: 12px; font-weight: 600; margin-bottom: 10px; }
+    .compare-card h2 { margin: 0 0 10px; font-size: 20px; font-weight: 600; }
+    .compare-card p { margin: 0 0 14px; color: var(--muted); font-size: 15px; }
+    .compare-card .link-text { color: var(--primary); font-weight: 600; font-size: 15px; }
+    .guide-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
+    .guide-card { background: var(--card); border: 1.5px solid var(--primary); border-radius: var(--radius); padding: 24px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); transition: box-shadow 0.2s ease, transform 0.2s ease; }
+    .guide-card:hover { box-shadow: 0 10px 28px rgba(0,0,0,0.08); transform: translateY(-2px); }
+    .guide-label { display: inline-block; background: #fef3c7; color: #92400e; padding: 4px 12px; border-radius: 999px; font-size: 12px; font-weight: 600; margin-bottom: 10px; }
+    .guide-card h2 { margin: 0 0 10px; font-size: 20px; font-weight: 600; }
+    .guide-card p { margin: 0 0 14px; color: var(--muted); font-size: 15px; }
+    .guide-card .link-text { color: var(--primary); font-weight: 600; font-size: 15px; }
+    .site-footer { border-top: 1px solid var(--line); padding: 24px 0 40px; color: var(--muted); font-size: 14px; text-align: center; }
+    @media (max-width: 768px) { h1 { font-size: 30px; } .header-inner { flex-direction: column; align-items: flex-start; gap: 12px; } .hero { padding-top: 36px; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">AI 站长工作流目录</div>
+      <nav class="nav">
+        <a href="index.html">首页</a>
+        <a href="categories.html" class="active">分类页</a>
+        <a href="about.html">关于本站</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow">内容结构</div>
+        <h1>按问题分类，而不是按工具堆砌</h1>
+        <p>
+          这里的分类不是简单罗列工具，而是围绕中文出海创作者最常见的问题来组织内容，
+          帮你更快找到建站、内容、SEO 和变现相关的解决方案。
+        </p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">对比决策</h2>
+        <div class="compare-grid">
+          <a href="framer-vs-wix.html" style="display: block; text-decoration: none; color: inherit;">
+            <article class="compare-card">
+              <span class="compare-label">建站工具</span>
+              <h2>Framer 和 Wix，新手该选哪个？</h2>
+              <p>从上手难度、美观度、自由度、SEO 等 8 个维度全面对比，帮你快速做出建站工具选择。</p>
+              <span class="link-text">查看对比 →</span>
+            </article>
+          </a>
+          <a href="github-pages-vs-framer.html" style="display: block; text-decoration: none; color: inherit;">
+            <article class="compare-card">
+              <span class="compare-label">建站工具</span>
+              <h2>GitHub Pages 和 Framer，该怎么选？</h2>
+              <p>从成本、代码要求、上线速度、长期成长性等 9 个维度对比，帮你找到最适合自己的第一个网站方案。</p>
+              <span class="link-text">查看对比 →</span>
+            </article>
+          </a>
+          <a href="wix-vs-wordpress.html" style="display: block; text-decoration: none; color: inherit;">
+            <article class="compare-card">
+              <span class="compare-label">建站工具</span>
+              <h2>Wix 和 WordPress，该选哪个？</h2>
+              <p>从 SEO、扩展性、维护成本、长期成长性等维度对比，帮你判断短期方便和长期成长的取舍。</p>
+              <span class="link-text">查看对比 →</span>
+            </article>
+          </a>
+          <a href="framer-vs-wordpress.html" style="display: block; text-decoration: none; color: inherit;">
+            <article class="compare-card">
+              <span class="compare-label">建站工具</span>
+              <h2>Framer 和 WordPress，该怎么选？</h2>
+              <p>从美观度、内容管理、扩展性等维度对比，帮你判断视觉优先还是内容优先更适合你。</p>
+              <span class="link-text">查看对比 →</span>
+            </article>
+          </a>
+          <a href="notion-
