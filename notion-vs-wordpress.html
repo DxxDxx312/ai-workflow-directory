@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Notion vs WordPress 对比 - AI 站长工作流目录</title>
+  <meta name="description" content="Notion 和 WordPress 谁更适合做内容站？从内容管理、SEO、可扩展性等维度帮你做决定。">
+  <style>
+    :root { --bg: #f7f6f2; --card: #ffffff; --text: #1f2937; --muted: #6b7280; --line: #e5e7eb; --primary: #0f766e; --primary-dark: #115e59; --max-width: 1080px; --radius: 16px; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { color: var(--primary-dark); }
+    .container { width: min(100% - 32px, var(--max-width)); margin: 0 auto; }
+    .site-header { background: rgba(255,255,255,0.85); border-bottom: 1px solid var(--line); position: sticky; top: 0; backdrop-filter: blur(12px); z-index: 10; }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
+    .logo { font-size: 20px; font-weight: 700; color: var(--text); }
+    .nav { display: flex; gap: 18px; flex-wrap: wrap; }
+    .nav a { color: var(--muted); font-size: 15px; font-weight: 500; padding: 4px 0; border-bottom: 2px solid transparent; }
+    .nav a:hover { color: var(--text); }
+    .nav a.active { color: var(--primary); border-bottom-color: var(--primary); }
+    .breadcrumb { padding: 16px 0 0; font-size: 13px; color: var(--muted); }
+    .breadcrumb a { color: var(--muted); }
+    .breadcrumb a:hover { color: var(--text); }
+    .breadcrumb span { color: var(--text); font-weight: 500; }
+    .hero { padding: 40px 0 32px; }
+    .eyebrow { display: inline-block; background: #ccfbf1; color: #115e59; padding: 6px 14px; border-radius: 999px; font-size: 13px; font-weight: 600; margin-bottom: 16px; }
+    h1 { font-size: 38px; line-height: 1.15; margin: 0 0 14px; font-weight: 700; }
+    .hero .intro { max-width: 760px; color: var(--muted); font-size: 17px; margin: 0 0 20px; }
+    .quick-summary { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 24px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); max-width: 760px; }
+    .quick-summary strong { color: var(--primary); font-weight: 600; }
+    .quick-summary p { margin: 0; font-size: 15px; color: var(--text); }
+    .section { padding: 20px 0 56px; }
+    .section-title { font-size: 24px; margin: 0 0 20px; font-weight: 600; }
+    .conclusion-box { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); }
+    .conclusion-box p { margin: 0 0 12px; color: var(--text); font-size: 16px; }
+    .conclusion-box p:last-child { margin-bottom: 0; }
+    .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    table { width: 100%; border-collapse: collapse; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; box-shadow: 0 6px 18px rgba(0,0,0,0.04); min-width: 640px; }
+    th, td { padding: 14px 16px; text-align: left; font-size: 15px; border-bottom: 1px solid var(--line); }
+    th { background: #f0fdfa; font-weight: 600; color: var(--primary-dark); }
+    td { color: var(--text); }
+    tr:last-child td { border-bottom: none; }
+    .tag-wp { display: inline-block; background: #f0fdfa; color: var(--primary); padding: 2px 10px; border-radius: 999px; font-size: 13px; font-weight: 600; }
+    .tag-notion { display: inline-block; background: #fef3c7; color: #92400e; padding: 2px 10px; border-radius: 999px; font-size: 13px; font-weight: 600; }
+    .tag-neutral { display: inline-block; background: #f3f4f6; color: var(--muted); padding: 2px 10px; border-radius: 999px; font-size: 13px; font-weight: 500; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); }
+    .card h3 { margin: 0 0 14px; font-size: 18px; font-weight: 600; }
+    .card ul { margin: 0; padding-left: 18px; color: var(--muted); font-size: 15px; line-height: 1.8; }
+    .card li { margin-bottom: 4px; }
+    .advice-box { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); }
+    .advice-box p { margin: 0 0 12px; color: var(--text); font-size: 16px; }
+    .advice-box p:last-child { margin-bottom: 0; }
+    .mistake-box { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); }
+    .mistake-box h3 { margin: 0 0 14px; font-size: 18px; font-weight: 600; color: var(--text); }
+    .mistake-box ul { margin: 0; padding-left: 18px; color: var(--muted); font-size: 15px; line-height: 1.8; }
+    .mistake-box li { margin-bottom: 8px; }
+    .mistake-box strong { color: var(--text); }
+    .compare-more-section { padding: 20px 0 40px; }
+    .compare-more-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+    .compare-more-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; box-shadow: 0 4px 12px rgba(0,0,0,0.03); transition: box-shadow 0.2s ease, transform 0.2s ease; }
+    .compare-more-card:hover { box-shadow: 0 8px 20px rgba(0,0,0,0.06); transform: translateY(-2px); }
+    .compare-more-card h4 { margin: 0 0 8px; font-size: 15px; font-weight: 600; color: var(--text); }
+    .compare-more-card p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.5; }
+    .related-section { padding: 20px 0 40px; }
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+    .related-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.03); transition: box-shadow 0.2s ease, transform 0.2s ease; }
+    .related-card:hover { box-shadow: 0 8px 20px rgba(0,0,0,0.06); transform: translateY(-2px); }
+    .related-card h4 { margin: 0 0 6px; font-size: 16px; font-weight: 600; color: var(--text); }
+    .related-card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.5; }
+    .cta-section { text-align: center; padding: 20px 0 64px; }
+    .btn { display: inline-block; background: var(--primary); color: #fff; padding: 14px 28px; border-radius: 10px; font-size: 16px; font-weight: 600; transition: background 0.2s ease; margin: 0 6px 10px; }
+    .btn:hover { background: var(--primary-dark); color: #fff; }
+    .btn-outline { display: inline-block; background: transparent; color: var(--primary); border: 1.5px solid var(--primary); padding: 14px 28px; border-radius: 10px; font-size: 16px; font-weight: 600; transition: background 0.2s ease; margin: 0 6px 10px; }
+    .btn-outline:hover { background: #f0fdfa; color: var(--primary-dark); }
+    .site-footer { border-top: 1px solid var(--line); padding: 24px 0 40px; color: var(--muted); font-size: 14px; text-align: center; }
+    @media (max-width: 768px) { h1 { font-size: 30px; } .header-inner { flex-direction: column; align-items: flex-start; gap: 12px; } .hero { padding-top: 24px; } th, td { padding: 12px 14px; font-size: 14px; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">AI 站长工作流目录</div>
+      <nav class="nav">
+        <a href="index.html">首页</a>
+        <a href="categories.html" class="active">分类页</a>
+        <a href="about.html">关于本站</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">首页</a> › <a href="categories.html">分类页</a> › <span>Notion vs WordPress</span>
+      </div>
+    </div>
+
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow">建站工具对比</div>
+        <h1>Notion 和 WordPress，谁更适合做内容站？</h1>
+        <p class="intro">一个让你零门槛开始写内容，一个让你做出专业的长期内容平台。这篇对比帮你判断，轻量起步还是一步到位。</p>
+        <div class="quick-summary">
+          <p><strong>一句话总结：</strong>想零门槛快速开始写内容，选 Notion；计划长期 SEO、内容矩阵或商业化运营，选 WordPress。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">先说结论</h2>
+        <div class="conclusion-box">
+          <p><strong>Notion</strong> 是「轻量内容站」方案。你可以用最快的方式把内容组织成可公开访问的页面，适合验证想法、个人知识库和小型内容项目。它的 SEO 能力和扩展性有限，但启动成本极低。</p>
+          <p><strong>WordPress</strong> 是「专业内容系统」方案。它是为长期内容运营设计的，SEO 强大、插件生态丰富、完全可控。适合计划持续产出内容、依赖搜索流量获取用户的项目。</p>
+          <p>对中文出海新手来说，<strong>如果你只是想先有一个内容站试试水，Notion 足够；如果你计划做长期 SEO、内容矩阵或商业化运营，WordPress 是更稳妥的选择。</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">8 个维度对比</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>对比维度</th>
+                <th>Notion</th>
+                <th>WordPress</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>上手难度</td>
+                <td><span class="tag-notion">简单</span> 会打字就能用</td>
+                <td><span class="tag-neutral">较难</span> 需理解主机、后台、插件</td>
+              </tr>
+              <tr>
+                <td>内容管理</td>
+                <td><span class="tag-notion">很好</span> 数据库、嵌套页面、标签</td>
+                <td><span class="tag-wp">很好</span> 文章、分类、标签、媒体库</td>
+              </tr>
+              <tr>
+                <td>SEO 友好度</td>
+                <td><span class="tag-neutral">一般</span> 可被索引，但控制弱</td>
+                <td><span class="tag-wp">很好</span> 插件强大，完全可控</td>
+              </tr>
+              <tr>
+                <td>可扩展性</td>
+                <td><span class="tag-neutral">有限</span> 受平台功能边界限制</td>
+                <td><span class="tag-wp">极高</span> 5 万+ 插件，几乎无限制</td>
+              </tr>
+              <tr>
+                <td>新手维护难度</td>
+                <td><span class="tag-notion">极低</span> 平台自动维护</td>
+                <td><span class="tag-neutral">中等</span> 需定期更新主题和插件</td>
+              </tr>
+              <tr>
+                <td>自定义自由度</td>
+                <td><span class="tag-neutral">有限</span> 在 Notion 框架内</td>
+                <td><span class="tag-wp">很高</span> 代码+插件，完全可控</td>
+              </tr>
+              <tr>
+                <td>适合什么人</td>
+                <td>内容创作者、知识整理者、轻量站需求者</td>
+                <td>博主、SEO 从业者、长期内容运营者</td>
+              </tr>
+              <tr>
+                <td>长期成长性</td>
+                <td><span class="tag-neutral">中等</span> 适合轻量，难做复杂</td>
+                <td><span class="tag-wp">很高</span> 从小博客到大站都可</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">适合选 Notion 的人</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>📝 内容为王，形式次要</h3>
+            <ul>
+              <li>主要目标是产出和整理内容</li>
+              <li>不需要复杂的网站功能</li>
+              <li>读者更关心内容质量而非页面设计</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>⏱️ 零门槛启动</h3>
+            <ul>
+              <li>不想学习任何技术概念</li>
+              <li>今天注册，今天就能发布</li>
+              <li>编辑体验就像写文档</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>💡 低成本验证</h3>
+            <ul>
+              <li>不确定方向，先跑起来看看</li>
+              <li>用免费版就能开始</li>
+              <li>内容可以导出，未来迁移不困难</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">适合选 WordPress 的人</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>🔍 依赖 SEO 获取流量</h3>
+            <ul>
+              <li>自然搜索是主要流量来源</li>
+              <li>需要精细控制 URL、元数据、站点地图</li>
+              <li>计划做关键词布局和内容矩阵</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>🔧 未来需要扩展</h3>
+            <ul>
+              <li>现在简单，但未来可能要会员、电商、多语言</li>
+              <li>不想被平台功能限制</li>
+              <li>希望数据完全自有</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>💼 商业化运营</h3>
+            <ul>
+              <li>计划通过广告、联盟营销、付费内容变现</li>
+              <li>需要精细的转化追踪和分析</li>
+              <li>网站是长期资产，不是临时项目</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">常见误区</h2>
+        <div class="mistake-box">
+          <h3>新手容易踩的 4 个坑</h3>
+          <ul>
+            <li><strong>误区 1：「Notion 做内容站就够了」</strong> — Notion 的内容管理体验确实好，但公开页面的加载速度、SEO 结构、自定义域名都有明显限制。如果你认真做内容站，Notion 更适合做 MVP，而不是长期方案。</li>
+            <li><strong>误区 2：「WordPress 太难学」</strong> — 基础安装和内容发布其实不难。现在有很多托管型 WordPress（如 SiteGround、Cloudways），技术门槛已经很低。难的是优化，但你可以边做边学。</li>
+            <li><strong>误区 3：「Notion 免费版无限制」</strong> — Notion 免费版对公开页面有访客数量限制，上传文件也有限制。如果内容站流量起来，你需要升级到付费方案。</li>
+            <li><strong>误区 4：「内容迁移很麻烦」</strong> — Notion 支持导出 Markdown，WordPress 支持导入 Markdown。从 Notion 迁移到 WordPress 的内容成本，远低于你重新写一遍。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">我的建议</h2>
+        <div class="advice-box">
+          <p>如果你<strong>现在只是想开始写内容，不确定能不能坚持 3 个月以上</strong>，用 Notion 是最务实的选择。它的启动成本是零，内容管理体验优秀，而且你已经可能在用 Notion 做笔记。</p>
+          <p>如果你<strong>已经确定要做长期内容站，或者计划通过 SEO 获取流量</strong>，直接选 WordPress。Notion 的 SEO 天花板明显，长期竞争中会处于劣势。</p>
+          <p><strong>最务实的路径：</strong>先用 Notion 做内容生产和整理，积累 20-30 篇内容后，再迁移到 WordPress 做长期运营。这样既不会因为技术门槛而拖延，也不会因为平台限制而受限。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="compare-more-section">
+      <div class="container">
+        <h2 class="section-title">继续比较</h2>
+        <div class="compare-more-grid">
+          <a href="framer-vs-wix.html" style="display: block; text-decoration: none; color: inherit;"><article class="compare-more-card"><h4>Framer 和 Wix</h4><p>精致落地页 vs 全能建站平台</p></article></a>
+          <a href="github-pages-vs-framer.html" style="display: block; text-decoration: none; color: inherit;"><article class="compare-more-card"><h4>GitHub Pages 和 Framer</h4><p>零成本代码方案 vs 付费设计工具</p></article></a>
+          <a href="wix-vs-wordpress.html" style="display: block; text-decoration: none; color: inherit;"><article class="compare-more-card"><h4>Wix 和 WordPress</h4><p>快速上线 vs 长期成长</p></article></a>
+          <a href="framer-vs-wordpress.html" style="display: block; text-decoration: none; color: inherit;"><article class="compare-more-card"><h4>Framer 和 WordPress</h4><p>设计师工具 vs 内容管理系统</p></article></a>
+          <a href="notion-vs-framer.html" style="display: block; text-decoration: none; color: inherit;"><article class="compare-more-card"><h4>Notion 和 Framer</h4><p>内容管理 vs 视觉设计</p></article></a>
+          <a href="wordpress-vs-github-pages.html" style="display: block; text-decoration: none; color: inherit;"><article class="compare-more-card"><h4>WordPress 和 GitHub Pages</h4><p>全能 CMS vs 零成本静态站</p></article></a>
+          <a href="wix-vs-github-pages.html" style="display: block; text-decoration: none; color: inherit;"><article class="compare-more-card"><h4>Wix 和 GitHub Pages</h4><p>零代码平台 vs 代码托管方案</p></article></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="related-section">
+      <div class="container">
+        <h2 class="section-title">相关文章</h2>
+        <div class="related-grid">
+          <a href="beginner-website-tool-guide.html" style="display: block; text-decoration: none; color: inherit;"><article class="related-card"><h4>新手第一个网站该用什么工具？</h4><p>按目标人群快速匹配最适合你的建站方案</p></article></a>
+          <a href="no-code-website-choice.html" style="display: block; text-decoration: none; color: inherit;"><article class="related-card"><h4>不会代码的人，怎么选建站工具？</h4><p>零代码也能做出专业网站，按需求对号入座</p></article></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <a href="index.html" class="btn">返回首页</a>
+        <a href="categories.html" class="btn-outline">查看全部分类</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 AI 站长工作流目录 · 面向中文出海创作者的工具与工作流站。</p>
+    </div>
+  </footer>
+</body>
+</html>
