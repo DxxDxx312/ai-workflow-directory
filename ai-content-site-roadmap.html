@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>中文独立创作者如何用 AI 做内容站 - AI 站长工作流目录</title>
+  <meta name="description" content="AI 内容站完整路线图：从选题到变现，理解 AI 在内容生产每个环节的作用和边界。">
+  <style>
+    :root { --bg: #f7f6f2; --card: #ffffff; --text: #1f2937; --muted: #6b7280; --line: #e5e7eb; --primary: #0f766e; --primary-dark: #115e59; --max-width: 1080px; --radius: 16px; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { color: var(--primary-dark); }
+    .container { width: min(100% - 32px, var(--max-width)); margin: 0 auto; }
+    .site-header { background: rgba(255,255,255,0.85); border-bottom: 1px solid var(--line); position: sticky; top: 0; backdrop-filter: blur(12px); z-index: 10; }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
+    .logo { font-size: 20px; font-weight: 700; color: var(--text); }
+    .nav { display: flex; gap: 18px; flex-wrap: wrap; }
+    .nav a { color: var(--muted); font-size: 15px; font-weight: 500; padding: 4px 0; border-bottom: 2px solid transparent; }
+    .nav a:hover { color: var(--text); }
+    .nav a.active { color: var(--primary); border-bottom-color: var(--primary); }
+    .breadcrumb { padding: 16px 0 0; font-size: 13px; color: var(--muted); }
+    .breadcrumb a { color: var(--muted); }
+    .breadcrumb a:hover { color: var(--text); }
+    .breadcrumb span { color: var(--text); font-weight: 500; }
+    .hero { padding: 40px 0 32px; }
+    .eyebrow { display: inline-block; background: #ccfbf1; color: #115e59; padding: 6px 14px; border-radius: 999px; font-size: 13px; font-weight: 600; margin-bottom: 16px; }
+    h1 { font-size: 38px; line-height: 1.15; margin: 0 0 14px; font-weight: 700; }
+    .hero .intro { max-width: 760px; color: var(--muted); font-size: 17px; margin: 0 0 20px; }
+    .quick-summary { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 24px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); max-width: 760px; }
+    .quick-summary strong { color: var(--primary); font-weight: 600; }
+    .quick-summary p { margin: 0; font-size: 15px; color: var(--text); }
+    .section { padding: 20px 0 56px; }
+    .section-title { font-size: 24px; margin: 0 0 20px; font-weight: 600; }
+    .conclusion-box { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); }
+    .conclusion-box p { margin: 0 0 12px; color: var(--text); font-size: 16px; }
+    .conclusion-box p:last-child { margin-bottom: 0; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); }
+    .card h3 { margin: 0 0 14px; font-size: 18px; font-weight: 600; }
+    .card ul { margin: 0; padding-left: 18px; color: var(--muted); font-size: 15px; line-height: 1.8; }
+    .card li { margin-bottom: 4px; }
+    .advice-box { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); }
+    .advice-box p { margin: 0 0 12px; color: var(--text); font-size: 16px; }
+    .advice-box p:last-child { margin-bottom: 0; }
+    .mistake-box { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); }
+    .mistake-box h3 { margin: 0 0 14px; font-size: 18px; font-weight: 600; color: var(--text); }
+    .mistake-box ul { margin: 0; padding-left: 18px; color: var(--muted); font-size: 15px; line-height: 1.8; }
+    .mistake-box li { margin-bottom: 8px; }
+    .mistake-box strong { color: var(--text); }
+    .start-box { background: #f0fdfa; border: 1.5px solid var(--primary); border-radius: var(--radius); padding: 24px; margin: 32px 0; }
+    .start-box h3 { margin: 0 0 10px; font-size: 18px; font-weight: 600; color: var(--primary-dark); }
+    .start-box p { margin: 0; color: var(--text); font-size: 15px; }
+    .start-box a { font-weight: 600; }
+    .read-more-section { padding: 20px 0 40px; }
+    .read-more-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+    .read-more-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.03); transition: box-shadow 0.2s ease, transform 0.2s ease; }
+    .read-more-card:hover { box-shadow: 0 8px 20px rgba(0,0,0,0.06); transform: translateY(-2px); }
+    .read-more-card h4 { margin: 0 0 6px; font-size: 16px; font-weight: 600; color: var(--text); }
+    .read-more-card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.5; }
+    .cta-section { text-align: center; padding: 20px 0 64px; }
+    .btn { display: inline-block; background: var(--primary); color: #fff; padding: 14px 28px; border-radius: 10px; font-size: 16px; font-weight: 600; transition: background 0.2s ease; margin: 0 6px 10px; }
+    .btn:hover { background: var(--primary-dark); color: #fff; }
+    .btn-outline { display: inline-block; background: transparent; color: var(--primary); border: 1.5px solid var(--primary); padding: 14px 28px; border-radius: 10px; font-size: 16px; font-weight: 600; transition: background 0.2s ease; margin: 0 6px 10px; }
+    .btn-outline:hover { background: #f0fdfa; color: var(--primary-dark); }
+    .site-footer { border-top: 1px solid var(--line); padding: 24px 0 40px; color: var(--muted); font-size: 14px; text-align: center; }
+    @media (max-width: 768px) { h1 { font-size: 30px; } .header-inner { flex-direction: column; align-items: flex-start; gap: 12px; } .hero { padding-top: 24px; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">AI 站长工作流目录</div>
+      <nav class="nav">
+        <a href="index.html">首页</a>
+        <a href="categories.html" class="active">分类页</a>
+        <a href="about.html">关于本站</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">首页</a> › <a href="categories.html">分类页</a> › <span>中文独立创作者如何用 AI 做内容站</span>
+      </div>
+    </div>
+
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow">路线与清单</div>
+        <h1>中文独立创作者如何用 AI 做内容站</h1>
+        <p class="intro">AI 不是替代你写作，而是帮你把"从 0 到 1"的过程缩短 80%。这篇路线图帮你理解 AI 在内容站每个环节的真实作用，以及哪些环节必须靠人。</p>
+        <div class="quick-summary">
+          <p><strong>一句话总结：</strong>AI 擅长选题、结构、初稿和优化；人不擅长但必须做的是：判断价值、注入经验、建立信任。内容站的长期竞争力来自"AI 效率 + 人的判断"。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">先说结论</h2>
+        <div class="conclusion-box">
+          <p>AI 内容站的核心公式是：<strong>AI 负责规模化生产，你负责筛选和把关。</strong></p>
+          <p>一个可持续的内容站不是"让 AI 写 100 篇文章然后等着收钱"，而是"用 AI 快速验证选题，用人的判断决定哪些值得深度做，然后持续迭代"。</p>
+          <p>对中文独立创作者来说，语言优势（中文理解）+ AI 效率（英文工具）是一个独特的组合。你可以用 AI 工具做英文站，也可以用中文内容做中文站，关键是找到你的差异化。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">谁适合做 AI 内容站</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>✅ 适合的人</h3>
+            <ul>
+              <li>有某个领域的知识或经验可以分享</li>
+              <li>愿意每周投入 5-10 小时做内容</li>
+              <li>对 SEO 和长期流量有耐心</li>
+              <li>能接受前 3-6 个月可能没有明显收入</li>
+              <li>会用 AI 工具辅助，但不完全依赖</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>❌ 不适合的人</h3>
+            <ul>
+              <li>想"躺赚"，不想投入时间</li>
+              <li>对任何领域都没有深入了解</li>
+              <li>希望 1 个月内看到收入</li>
+              <li>完全不想学习 SEO 和内容策略</li>
+              <li>认为 AI 可以替代所有人工判断</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">AI 在内容站流程中的作用</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>1. 选题与关键词研究</h3>
+            <ul>
+              <li>AI 可以批量生成关键词列表</li>
+              <li>分析搜索意图和竞争度</li>
+              <li>发现长尾词机会</li>
+              <li><strong>你必须做：</strong>判断哪些选题符合你的能力和兴趣</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>2. 内容结构规划</h3>
+            <ul>
+              <li>AI 可以生成文章大纲和目录</li>
+              <li>建议 H2/H3 标题结构</li>
+              <li>规划内链位置</li>
+              <li><strong>你必须做：</strong>确认结构是否符合用户真实需求</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>3. 初稿生成</h3>
+            <ul>
+              <li>AI 可以快速产出 2000-3000 字初稿</li>
+              <li>覆盖基础知识点</li>
+              <li>生成多种表达方式</li>
+              <li><strong>你必须做：</strong>事实核查、补充经验、调整语气</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>4. 优化与改写</h3>
+            <ul>
+              <li>AI 可以改写标题提高点击率</li>
+              <li>优化段落可读性</li>
+              <li>生成多版本摘要</li>
+              <li><strong>你必须做：</strong>确保改写不偏离原意</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>5. 配图与视觉</h3>
+            <ul>
+              <li>AI 可以生成封面图和插图</li>
+              <li>建议配色和排版</li>
+              <li><strong>你必须做：</strong>确保视觉风格统一，不侵权</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>6. 发布与分发</h3>
+            <ul>
+              <li>AI 可以生成社交媒体文案</li>
+              <li>写邮件简报摘要</li>
+              <li><strong>你必须做：</strong>选择分发渠道，监控反馈</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">现在不要做什么</h2>
+        <div class="mistake-box">
+          <h3>AI 内容站早期最容易踩的 4 个坑</h3>
+          <ul>
+            <li><strong>不要：用 AI 批量生成低质量内容</strong> — 搜索引擎越来越能识别 AI 生成的低质量内容。批量生产没有价值的文章，不仅不会带来流量，还可能导致网站被降权。</li>
+            <li><strong>不要：完全不做人工编辑</strong> — AI 会"幻觉"（编造事实），会用过时的信息，会写出看似正确但缺乏深度的内容。人工编辑不是可选项，是必选项。</li>
+            <li><strong>不要：一开始就追求多平台分发</strong> — 先把一个平台（你的网站）做好，再考虑分发到其他渠道。分散精力是早期创作者最大的敌人。</li>
+            <li><strong>不要：忽视用户体验</strong> — 页面加载速度、移动端适配、阅读体验，这些直接影响 SEO 和转化率。AI 写内容快，但网站体验需要你自己把关。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="start-box">
+        <h3>如果你只想先开始</h3>
+        <p>直接打开 <a href="ai-content-workflow-checklist.html">AI 内容站起步清单</a>，按清单完成前 5 项，今天就能开始。</p>
+      </div>
+    </div>
+
+    <section class="read-more-section">
+      <div class="container">
+        <h2 class="section-title">推荐阅读</h2>
+        <div class="read-more-grid">
+          <a href="ai-content-workflow-checklist.html" style="display: block; text-decoration: none; color: inherit;"><article class="read-more-card"><h4>AI 内容站起步清单</h4><p>最小可行动作，今天就能开始</p></article></a>
+          <a href="beginner-content-site-starter-pack.html" style="display: block; text-decoration: none; color: inherit;"><article class="read-more-card"><h4>新手内容站起步包</h4><p>先做哪些页面最值</p></article></a>
+          <a href="first-website-roadmap.html" style="display: block; text-decoration: none; color: inherit;"><article class="read-more-card"><h4>从 0 到 1 做出第一个网站</h4><p>完整的 6 步路线图</p></article></a>
+          <a href="website-tool-recommendation.html" style="display: block; text-decoration: none; color: inherit;"><article class="read-more-card"><h4>如果只能先选一个建站工具</h4><p>编辑建议：按目标直接推荐</p></article></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <a href="index.html" class="btn">返回首页</a>
+        <a href="categories.html" class="btn-outline">查看全部分类</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 AI 站长工作流目录 · 面向中文出海创作者的工具与工作流站。</p>
+    </div>
+  </footer>
+</body>
+</html>
