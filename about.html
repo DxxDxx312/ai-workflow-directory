@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>关于本站 - AI 站长工作流目录</title>
+  <meta name="description" content="了解本站为什么存在，写给谁看，以及它会提供什么内容。">
+  <style>
+    :root {
+      --bg: #f7f6f2;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --primary: #0f766e;
+      --primary-dark: #115e59;
+      --max-width: 1080px;
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(0,0,0,0.06);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC",
+        "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    a:hover {
+      color: var(--primary-dark);
+    }
+    .container {
+      width: min(100% - 32px, var(--max-width));
+      margin: 0 auto;
+    }
+    .site-header {
+      background: rgba(255,255,255,0.85);
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(12px);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 0;
+    }
+    .logo {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .nav {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+    .nav a {
+      color: var(--muted);
+      font-size: 15px;
+      font-weight: 500;
+      padding: 4px 0;
+      border-bottom: 2px solid transparent;
+    }
+    .nav a:hover {
+      color: var(--text);
+    }
+    .nav a.active {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+    }
+    .hero {
+      padding: 56px 0 24px;
+    }
+    .eyebrow {
+      display: inline-block;
+      background: #ccfbf1;
+      color: #115e59;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: 38px;
+      line-height: 1.15;
+      margin: 0 0 14px;
+      font-weight: 700;
+    }
+    .hero p {
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 17px;
+      margin: 0;
+    }
+    .section {
+      padding: 20px 0 56px;
+    }
+    .content-block {
+      max-width: 720px;
+    }
+    .content-block h2 {
+      font-size: 22px;
+      margin: 32px 0 12px;
+      font-weight: 600;
+    }
+    .content-block p {
+      color: var(--muted);
+      font-size: 16px;
+      margin: 0 0 16px;
+    }
+    .content-block ul {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.8;
+      margin: 0 0 24px;
+      padding-left: 20px;
+    }
+    .content-block li {
+      margin-bottom: 6px;
+    }
+    .highlight-box {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin: 32px 0;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+    }
+    .highlight-box h3 {
+      margin: 0 0 12px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+    .highlight-box p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+        .start-box { background: #f0fdfa; border: 1.5px solid var(--primary); border-radius: var(--radius); padding: 24px; margin: 32px 0; }
+    .start-box h3 { margin: 0 0 10px; font-size: 18px; font-weight: 600; color: var(--primary-dark); }
+    .start-box p { margin: 0; color: var(--text); font-size: 15px; }
+    .start-box a { font-weight: 600; }
+    .site-footer {
+      border-top: 1px solid var(--line);
+      padding: 24px 0 40px;
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+    }
+    @media (max-width: 768px) {
+      h1 { font-size: 30px; }
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+      .hero {
+        padding-top: 36px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">AI 站长工作流目录</div>
+      <nav class="nav">
+        <a href="index.html">首页</a>
+        <a href="categories.html">分类页</a>
+        <a href="about.html" class="active">关于本站</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow">关于本站</div>
+        <h1>写给独立创作者的工具站</h1>
+        <p>
+          本站面向中文出海创作者，整理 AI 工具与工作流，帮你少走弯路，快速搭建和变现。
+        </p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="content-block">
+          <h2>为什么做这个站</h2>
+          <p>
+            中文出海创作者在选择工具和工作流时，常常面临信息分散、语言障碍和试用成本高的问题。
+            本站希望整理出一套清晰、实用的工具目录和工作流参考，帮助你快速做出选择。
+          </p>
+
+          <h2>写给谁看</h2>
+          <ul>
+            <li>想用 AI 提升内容生产效率的独立创作者</li>
+            <li>刚起步、不知道从哪里开始的新手站长</li>
+            <li>想系统化建站、SEO 和变现流程的出海从业者</li>
+          </ul>
+
+          <div class="highlight-box">
+            <h3>本站原则</h3>
+            <p>不追求大而全，只整理真正好用、适合独立创作者的工具和方法。每类工具精挑细选，附上使用场景和注意事项。</p>
+          </div>
+
+          <h2>内容来源</h2>
+          <p>
+            内容主要来自作者亲测和社区推荐，持续更新中。如有推荐工具或发现过时信息，
+            欢迎通过网站上的联系方式反馈。
+          </p>
+        </div>
+      </div>
+    </section>
+    <div class="container">
+      <div class="start-box" style="margin-top: 40px;">
+        <h3>如果你只想先开始</h3>
+        <p>直接返回 <a href="index.html">首页</a>，从"新手先看"部分开始，或者查看 <a href="website-tool-recommendation.html">编辑建议</a> 按目标直接选工具。</p>
+      </div>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 AI 站长工作流目录 · 面向中文出海创作者的工具与工作流站。</p>
+    </div>
+  </footer>
+</body>
+</html>
