@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WordPress vs GitHub Pages 对比 - AI 站长工作流目录</title>
+  <meta name="description" content="WordPress 和 GitHub Pages 新手怎么选？从代码要求、SEO、维护成本、技术门槛等维度帮你做决定。">
+  <style>
+    :root { --bg: #f7f6f2; --card: #ffffff; --text: #1f2937; --muted: #6b7280; --line: #e5e7eb; --primary: #0f766e; --primary-dark: #115e59; --max-width: 1080px; --radius: 16px; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { color: var(--primary-dark); }
+    .container { width: min(100% - 32px, var(--max-width)); margin: 0 auto; }
+    .site-header { background: rgba(255,255,255,0.85); border-bottom: 1px solid var(--line); position: sticky; top: 0; backdrop-filter: blur(12px); z-index: 10; }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
+    .logo { font-size: 20px; font-weight: 700; color: var(--text); }
+    .nav { display: flex; gap: 18px; flex-wrap: wrap; }
+    .nav a { color: var(--muted); font-size: 15px; font-weight: 500; padding: 4px 0; border-bottom: 2px solid transparent; }
+    .nav a:hover { color: var(--text); }
+    .nav a.active { color: var(--primary); border-bottom-color: var(--primary); }
+    .breadcrumb { padding: 16px 0 0; font-size: 13px; color: var(--muted); }
+    .breadcrumb a { color: var(--muted); }
+    .breadcrumb a:hover { color: var(--text); }
+    .breadcrumb span { color: var(--text); font-weight: 500; }
+    .hero { padding: 40px 0 32px; }
+    .eyebrow { display: inline-block; background: #ccfbf1; color: #115e59; padding: 6px 14px; border-radius: 999px; font-size: 13px; font-weight: 600; margin-bottom: 16px; }
+    h1 { font-size: 38px; line-height: 1.15; margin: 0 0 14px; font-weight: 700; }
+    .hero .intro { max-width: 760px; color: var(--muted); font-size: 17px; margin: 0 0 20px; }
+    .quick-summary { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 24px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); max-width: 760px; }
+    .quick-summary strong { color: var(--primary); font-weight: 600; }
+    .quick-summary p { margin: 0; font-size: 15px; color: var(--text); }
+    .section { padding: 20px 0 56px; }
+    .section-title { font-size: 24px; margin: 0 0 20px; font-weight: 600; }
+    .conclusion-box { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); }
+    .conclusion-box p { margin: 0 0 12px; color: var(--text); font-size: 16px; }
+    .conclusion-box p:last-child { margin-bottom: 0; }
+    .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    table { width: 100%; border-collapse: collapse; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; box-shadow: 0 6px 18px rgba(0,0,0,0.04); min-width: 640px; }
+    th, td { padding: 14px 16px; text-align: left; font-size: 15px; border-bottom: 1px solid var(--line); }
+    th { background: #f0fdfa; font-weight: 600; color: var(--primary-dark); }
+    td { color: var(--text); }
+    tr:last-child td { border-bottom: none; }
+    .tag-wp { display: inline-block; background: #f0fdfa; color: var(--primary); padding: 2px 10px; border-radius: 999px; font-size: 13px; font-weight: 600; }
+    .tag-gh { display: inline-block; background: #f0f9ff; color: #0369a1; padding: 2px 10px; border-radius: 999px; font-size: 13px; font-weight: 600; }
+    .tag-neutral { display: inline-block; background: #f3f4f6; color: var(--muted); padding: 2px 10px; border-radius: 999px; font-size: 13px; font-weight: 500; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); }
+    .card h3 { margin: 0 0 14px; font-size: 18px; font-weight: 600; }
+    .card ul { margin: 0; padding-left: 18px; color: var(--muted); font-size: 15px; line-height: 1.8; }
+    .card li { margin-bottom: 4px; }
+    .advice-box { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); }
+    .advice-box p { margin: 0 0 12px; color: var(--text); font-size: 16px; }
+    .advice-box p:last-child { margin-bottom: 0; }
+    .mistake-box { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); }
+    .mistake-box h3 { margin: 0 0 14px; font-size: 18px; font-weight: 600; color: var(--text); }
+    .mistake-box ul { margin: 0; padding-left: 18px; color: var(--muted); font-size: 15px; line-height: 1.8; }
+    .mistake-box li { margin-bottom: 8px; }
+    .mistake-box strong { color: var(--text); }
+    .compare-more-section { padding: 20px 0 40px; }
+    .compare-more-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+    .compare-more-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; box-shadow: 0 4px 12px rgba(0,0,0,0.03); transition: box-shadow 0.2s ease, transform 0.2s ease; }
+    .compare-more-card:hover { box-shadow: 0 8px 20px rgba(0,0,0,0.06); transform: translateY(-2px); }
+    .compare-more-card h4 { margin: 0 0 8px; font-size: 15px; font-weight: 600; color: var(--text); }
+    .compare-more-card p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.5; }
+    .related-section { padding: 20px 0 40px; }
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+    .related-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.03); transition: box-shadow 0.2s ease, transform 0.2s ease; }
+    .related-card:hover { box-shadow: 0 8px 20px rgba(0,0,0,0.06); transform: translateY(-2px); }
+    .related-card h4 { margin: 0 0 6px; font-size: 16px; font-weight: 600; color: var(--text); }
+    .related-card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.5; }
+    .cta-section { text-align: center; padding: 20px 0 64px; }
+    .btn { display: inline-block; background: var(--primary); color: #fff; padding: 14px 28px; border-radius: 10px; font-size: 16px; font-weight: 600; transition: background 0.2s ease; margin: 0 6px 10px; }
+    .btn:hover { background: var(--primary-dark); color: #fff; }
+    .btn-outline { display: inline-block; background: transparent; color: var(--primary); border: 1.5px solid var(--primary); padding: 14px 28px; border-radius: 10px; font-size: 16px; font-weight: 600; transition: background 0.2s ease; margin: 0 6px 10px; }
+    .btn-outline:hover { background: #f0fdfa; color: var(--primary-dark); }
+        .start-box { background: #f0fdfa; border: 1.5px solid var(--primary); border-radius: var(--radius); padding: 24px; margin: 32px 0; }
+    .start-box h3 { margin: 0 0 10px; font-size: 18px; font-weight: 600; color: var(--primary-dark); }
+    .start-box p { margin: 0; color: var(--text); font-size: 15px; }
+    .start-box a { font-weight: 600; }
+    .site-footer { border-top: 1px solid var(--line); padding: 24px 0 40px; color: var(--muted); font-size: 14px; text-align: center; }
+    @media (max-width: 768px) { h1 { font-size: 30px; } .header-inner { flex-direction: column; align-items: flex-start; gap: 12px; } .hero { padding-top: 24px; } th, td { padding: 12px 14px; font-size: 14px; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">AI 站长工作流目录</div>
+      <nav class="nav">
+        <a href="index.html">首页</a>
+        <a href="categories.html" class="active">分类页</a>
+        <a href="about.html">关于本站</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">首页</a> › <a href="categories.html">分类页</a> › <span>WordPress vs GitHub Pages</span>
+      </div>
+    </div>
+
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow">建站工具对比</div>
+        <h1>WordPress 和 GitHub Pages，新手怎么选？</h1>
+        <p class="intro">一个功能强大但需要一点学习成本，一个完全免费但需要一点代码基础。这篇对比帮你找到最适合自己的起点。</p>
+        <div class="quick-summary">
+          <p><strong>一句话总结：</strong>做内容站、博客或长期 SEO，选 WordPress；预算为零、愿意学一点技术，选 GitHub Pages。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">先说结论</h2>
+        <div class="conclusion-box">
+          <p><strong>WordPress</strong> 是「全能型内容管理系统」。你不需要写代码就能做出功能丰富的网站，从博客到电商都能覆盖。但它需要理解主机、域名、插件这些概念，有一定的学习曲线。</p>
+          <p><strong>GitHub Pages</strong> 是「零成本代码方案」。你完全不需要花钱，但需要懂一点 HTML/CSS 和 Git 基础操作。适合愿意学一点技术、预算为零的人。</p>
+          <p>对中文出海新手来说，<strong>如果你想做内容站、博客或任何需要长期 SEO 的项目，选 WordPress；如果你预算为零、愿意学一点基础技术，选 GitHub Pages。</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">8 个维度对比</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>对比维度</th>
+                <th>WordPress</th>
+                <th>GitHub Pages</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>是否需要代码</td>
+                <td><span class="tag-wp">不需要</span> 可视化编辑，插件安装</td>
+                <td><span class="tag-gh">需要</span> 至少懂 HTML/CSS 基础</td>
+              </tr>
+              <tr>
+                <td>SEO 友好度</td>
+                <td><span class="tag-wp">很好</span> 插件强大，完全可控</td>
+                <td><span class="tag-gh">很好</span> 静态页面，搜索引擎喜欢</td>
+              </tr>
+              <tr>
+                <td>维护成本</td>
+                <td><span class="tag-neutral">中等</span> 主机+域名+部分插件需付费</td>
+                <td><span class="tag-gh">极低</span> 免费托管，几乎零成本</td>
+              </tr>
+              <tr>
+                <td>自定义自由度</td>
+                <td><span class="tag-wp">很高</span> 代码+插件，完全可控</td>
+                <td><span class="tag-gh">极高</span> 代码完全可控</td>
+              </tr>
+              <tr>
+                <td>技术门槛</td>
+                <td><span class="tag-neutral">中等</span> 需理解主机、后台、插件</td>
+                <td><span class="tag-neutral">中等</span> 需学 Git 和基础 HTML</td>
+              </tr>
+              <tr>
+                <td>内容管理</td>
+                <td><span class="tag-wp">很好</span> 专为内容管理设计</td>
+                <td><span class="tag-neutral">一般</span> 需手动管理文件和结构</td>
+              </tr>
+              <tr>
+                <td>适合什么人</td>
+                <td>博主、内容创作者、需要丰富功能的人</td>
+                <td>技术爱好者、预算有限、愿意学习的人</td>
+              </tr>
+              <tr>
+                <td>长期成长性</td>
+                <td><span class="tag-wp">很高</span> 从小博客到大站都可</td>
+                <td><span class="tag-gh">很高</span> 学会后可迁移到任何平台</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">适合选 WordPress 的人</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>📝 做长期内容站</h3>
+            <ul>
+              <li>计划持续产出博客或文章</li>
+              <li>需要分类、标签、归档系统</li>
+              <li>内容量会随时间增长</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>🔍 重视 SEO 和流量</h3>
+            <ul>
+              <li>自然搜索是主要流量来源</li>
+              <li>需要精细控制 URL、元数据</li>
+              <li>愿意安装 SEO 插件优化</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>🛠️ 需要丰富功能</h3>
+            <ul>
+              <li>会员系统、电商、多语言</li>
+              <li>不想自己写代码实现</li>
+              <li>希望插件生态解决问题</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">适合选 GitHub Pages 的人</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>💰 预算为零</h3>
+            <ul>
+              <li>不想在网站上花一分钱</li>
+              <li>先验证想法，赚钱后再升级</li>
+              <li>学生或刚起步的创作者</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>🔧 愿意学技术</h3>
+            <ul>
+              <li>不排斥看教程和操作文档</li>
+              <li>愿意理解 Git 和 HTML 基础</li>
+              <li>希望掌握可迁移的技能</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>📈 看重长期技能</h3>
+            <ul>
+              <li>未来可能换平台或自建服务器</li>
+              <li>想理解网站背后的工作原理</li>
+              <li>不依赖单一平台</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">常见误区</h2>
+        <div class="mistake-box">
+          <h3>新手容易踩的 4 个坑</h3>
+          <ul>
+            <li><strong>误区 1：「WordPress 一定要会代码」</strong> — 基础 WordPress 使用完全不需要代码。安装主题、发布文章、安装插件都是可视化操作。代码只在深度定制时才需要。</li>
+            <li><strong>误区 2：「GitHub Pages 只能做技术博客」</strong> — GitHub Pages 可以托管任何静态网站，包括作品集、文档站、landing page。只要你会写 HTML/CSS，什么都能做。</li>
+            <li><strong>误区 3：「WordPress 很贵」</strong> — 基础主机+域名一年大约 300-500 元，对于认真做站的人来说是合理的投资。免费方案（GitHub Pages）有隐性成本：你的学习时间。</li>
+            <li><strong>误区 4：「GitHub Pages 不能改」</strong> — GitHub Pages 的内容完全由你控制。你可以随时修改、迁移、甚至导出到 WordPress。静态网站的数据迁移反而更简单。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">我的建议</h2>
+        <div class="advice-box">
+          <p>如果你<strong>计划做内容站、博客或任何依赖 SEO 获取流量的项目</strong>，我强烈建议选 WordPress。GitHub Pages 虽然免费，但内容管理体验差很多，长期产出内容会很痛苦。</p>
+          <p>如果你<strong>预算为零、愿意学一点技术、且网站内容不频繁更新</strong>（比如作品集、个人介绍页），GitHub Pages 是更务实的选择。它的成本是零，而且你学到的技能长期有用。</p>
+          <p><strong>最务实的路径：</strong>先用 GitHub Pages 做一个简单页面验证想法；一旦确定要做内容站，再迁移到 WordPress。但如果你已经确定方向，直接上 WordPress 更省时间。</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="start-box">
+        <h3>如果你只想先开始</h3>
+        <p>做内容站选 <a href="wordpress-vs-github-pages.html">WordPress</a>，预算为零选 <a href="wordpress-vs-github-pages.html">GitHub Pages</a>。或者直接看 <a href="website-tool-recommendation.html">编辑建议</a> 按目标直接推荐。</p>
+      </div>
+    </div>
+
+    <section class="compare-more-section">
+      <div class="container">
+        <h2 class="section-title">继续比较</h2>
+        <div class="compare-more-grid">
+          <a href="framer-vs-wix.html" style="display: block; text-decoration: none; color: inherit;"><article class="compare-more-card"><h4>Framer 和 Wix</h4><p>精致落地页 vs 全能建站平台</p></article></a>
+          <a href="github-pages-vs-framer.html" style="display: block; text-decoration: none; color: inherit;"><article class="compare-more-card"><h4>GitHub Pages 和 Framer</h4><p>零成本代码方案 vs 付费设计工具</p></article></a>
+          <a href="wix-vs-wordpress.html" style="display: block; text-decoration: none; color: inherit;"><article class="compare-more-card"><h4>Wix 和 WordPress</h4><p>快速上线 vs 长期成长</p></article></a>
+          <a href="framer-vs-wordpress.html" style="display: block; text-decoration: none; color: inherit;"><article class="compare-more-card"><h4>Framer 和 WordPress</h4><p>设计师工具 vs 内容管理系统</p></article></a>
+          <a href="notion-vs-framer.html" style="display: block; text-decoration: none; color: inherit;"><article class="compare-more-card"><h4>Notion 和 Framer</h4><p>内容管理 vs 视觉设计</p></article></a>
+          <a href="notion-vs-wordpress.html" style="display: block; text-decoration: none; color: inherit;"><article class="compare-more-card"><h4>Notion 和 WordPress</h4><p>轻量内容站 vs 专业内容系统</p></article></a>
+          <a href="wix-vs-github-pages.html" style="display: block; text-decoration: none; color: inherit;"><article class="compare-more-card"><h4>Wix 和 GitHub Pages</h4><p>零代码平台 vs 代码托管方案</p></article></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="related-section">
+      <div class="container">
+        <h2 class="section-title">相关文章</h2>
+        <div class="related-grid">
+          <a href="beginner-website-tool-guide.html" style="display: block; text-decoration: none; color: inherit;"><article class="related-card"><h4>新手第一个网站该用什么工具？</h4><p>按目标人群快速匹配最适合你的建站方案</p></article></a>
+          <a href="no-code-website-choice.html" style="display: block; text-decoration: none; color: inherit;"><article class="related-card"><h4>不会代码的人，怎么选建站工具？</h4><p>零代码也能做出专业网站，按需求对号入座</p></article></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <a href="index.html" class="btn">返回首页</a>
+        <a href="categories.html" class="btn-outline">查看全部分类</a>
+        <a href="website-tool-recommendation.html" class="btn-outline">编辑建议：选哪个工具</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 AI 站长工作流目录 · 面向中文出海创作者的工具与工作流站。</p>
+    </div>
+  </footer>
+</body>
+</html>
