@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>新手内容站起步包：先做哪些页面最值 - AI 站长工作流目录</title>
+  <meta name="description" content="内容站不是页面越多越好，而是先做对的那几个。这个起步包告诉你最小页面组合和优先级。">
+  <style>
+    :root { --bg: #f7f6f2; --card: #ffffff; --text: #1f2937; --muted: #6b7280; --line: #e5e7eb; --primary: #0f766e; --primary-dark: #115e59; --max-width: 1080px; --radius: 16px; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { color: var(--primary-dark); }
+    .container { width: min(100% - 32px, var(--max-width)); margin: 0 auto; }
+    .site-header { background: rgba(255,255,255,0.85); border-bottom: 1px solid var(--line); position: sticky; top: 0; backdrop-filter: blur(12px); z-index: 10; }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
+    .logo { font-size: 20px; font-weight: 700; color: var(--text); }
+    .nav { display: flex; gap: 18px; flex-wrap: wrap; }
+    .nav a { color: var(--muted); font-size: 15px; font-weight: 500; padding: 4px 0; border-bottom: 2px solid transparent; }
+    .nav a:hover { color: var(--text); }
+    .nav a.active { color: var(--primary); border-bottom-color: var(--primary); }
+    .breadcrumb { padding: 16px 0 0; font-size: 13px; color: var(--muted); }
+    .breadcrumb a { color: var(--muted); }
+    .breadcrumb a:hover { color: var(--text); }
+    .breadcrumb span { color: var(--text); font-weight: 500; }
+    .hero { padding: 40px 0 32px; }
+    .eyebrow { display: inline-block; background: #ccfbf1; color: #115e59; padding: 6px 14px; border-radius: 999px; font-size: 13px; font-weight: 600; margin-bottom: 16px; }
+    h1 { font-size: 38px; line-height: 1.15; margin: 0 0 14px; font-weight: 700; }
+    .hero .intro { max-width: 760px; color: var(--muted); font-size: 17px; margin: 0 0 20px; }
+    .quick-summary { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 24px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); max-width: 760px; }
+    .quick-summary strong { color: var(--primary); font-weight: 600; }
+    .quick-summary p { margin: 0; font-size: 15px; color: var(--text); }
+    .section { padding: 20px 0 56px; }
+    .section-title { font-size: 24px; margin: 0 0 20px; font-weight: 600; }
+    .conclusion-box { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); }
+    .conclusion-box p { margin: 0 0 12px; color: var(--text); font-size: 16px; }
+    .conclusion-box p:last-child { margin-bottom: 0; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); }
+    .card h3 { margin: 0 0 14px; font-size: 18px; font-weight: 600; }
+    .card ul { margin: 0; padding-left: 18px; color: var(--muted); font-size: 15px; line-height: 1.8; }
+    .card li { margin-bottom: 4px; }
+    .priority-box { background: var(--card); border: 1.5px solid var(--primary); border-radius: var(--radius); padding: 24px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); margin-bottom: 16px; }
+    .priority-box h3 { margin: 0 0 10px; font-size: 18px; font-weight: 600; color: var(--primary-dark); }
+    .priority-box p { margin: 0 0 10px; color: var(--text); font-size: 15px; }
+    .priority-box p:last-child { margin-bottom: 0; }
+    .priority-tag { display: inline-block; background: var(--primary); color: #fff; padding: 4px 12px; border-radius: 999px; font-size: 12px; font-weight: 600; margin-bottom: 10px; }
+    .advice-box { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); }
+    .advice-box p { margin: 0 0 12px; color: var(--text); font-size: 16px; }
+    .advice-box p:last-child { margin-bottom: 0; }
+    .start-box { background: #f0fdfa; border: 1.5px solid var(--primary); border-radius: var(--radius); padding: 24px; margin: 32px 0; }
+    .start-box h3 { margin: 0 0 10px; font-size: 18px; font-weight: 600; color: var(--primary-dark); }
+    .start-box p { margin: 0; color: var(--text); font-size: 15px; }
+    .start-box a { font-weight: 600; }
+    .read-more-section { padding: 20px 0 40px; }
+    .read-more-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+    .read-more-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.03); transition: box-shadow 0.2s ease, transform 0.2s ease; }
+    .read-more-card:hover { box-shadow: 0 8px 20px rgba(0,0,0,0.06); transform: translateY(-2px); }
+    .read-more-card h4 { margin: 0 0 6px; font-size: 16px; font-weight: 600; color: var(--text); }
+    .read-more-card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.5; }
+    .cta-section { text-align: center; padding: 20px 0 64px; }
+    .btn { display: inline-block; background: var(--primary); color: #fff; padding: 14px 28px; border-radius: 10px; font-size: 16px; font-weight: 600; transition: background 0.2s ease; margin: 0 6px 10px; }
+    .btn:hover { background: var(--primary-dark); color: #fff; }
+    .btn-outline { display: inline-block; background: transparent; color: var(--primary); border: 1.5px solid var(--primary); padding: 14px 28px; border-radius: 10px; font-size: 16px; font-weight: 600; transition: background 0.2s ease; margin: 0 6px 10px; }
+    .btn-outline:hover { background: #f0fdfa; color: var(--primary-dark); }
+    .site-footer { border-top: 1px solid var(--line); padding: 24px 0 40px; color: var(--muted); font-size: 14px; text-align: center; }
+    @media (max-width: 768px) { h1 { font-size: 30px; } .header-inner { flex-direction: column; align-items: flex-start; gap: 12px; } .hero { padding-top: 24px; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">AI 站长工作流目录</div>
+      <nav class="nav">
+        <a href="index.html">首页</a>
+        <a href="categories.html" class="active">分类页</a>
+        <a href="about.html">关于本站</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">首页</a> › <a href="categories.html">分类页</a> › <span>新手内容站起步包：先做哪些页面最值</span>
+      </div>
+    </div>
+
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow">路线与清单</div>
+        <h1>新手内容站起步包：先做哪些页面最值</h1>
+        <p class="intro">很多新手一上来就做 10 个页面，结果每个都做得浅。这个起步包告诉你：先做哪 4 个页面，为什么先做它们，以及哪些页面可以以后再说。</p>
+        <div class="quick-summary">
+          <p><strong>一句话总结：</strong>先做首页 + 关于页 + 1 个核心内容页 + 联系/行动页。这 4 个页面能帮你验证方向、建立信任、获取反馈。其他页面等你有流量了再做。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">先说结论</h2>
+        <div class="conclusion-box">
+          <p>内容站的价值不在于页面数量，而在于<strong>每个页面是否解决了用户的具体问题</strong>。</p>
+          <p>4 个页面的最小组合足够你跑通"吸引 → 信任 → 行动"的完整链条。页面多了但内容浅，反而分散用户注意力。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">建议先做哪些页面</h2>
+        <div class="priority-box">
+          <span class="priority-tag">优先级 1</span>
+          <h3>首页</h3>
+          <p><strong>为什么先做：</strong>首页是用户的第一印象，也是搜索引擎最重视的页面。它需要在 3 秒内告诉用户：这个站是干什么的、为谁服务、能获取什么价值。</p>
+          <p><strong>必须包含：</strong>清晰的价值主张、目标用户说明、核心内容入口、明确的下一步行动（比如"查看最新文章"或"订阅更新"）。</p>
+        </div>
+        <div class="priority-box">
+          <span class="priority-tag">优先级 2</span>
+          <h3>关于页</h3>
+          <p><strong>为什么先做：</strong>关于页是建立信任的关键。用户想知道内容背后是谁、为什么值得信任。没有关于页的网站，转化率通常低 30% 以上。</p>
+          <p><strong>必须包含：</strong>你是谁、你的经验/背景、这个站的使命、如何联系你。不要写简历，写"为什么你能帮用户解决问题"。</p>
+        </div>
+        <div class="priority-box">
+          <span class="priority-tag">优先级 3</span>
+          <h3>1 个核心内容页</h3>
+          <p><strong>为什么先做：</strong>这个页面是你网站的"招牌内容"，解决目标用户最痛的一个问题。它决定了用户会不会收藏你的网站、会不会回来。</p>
+          <p><strong>必须包含：</strong>具体问题的解决方案、可操作的步骤、真实案例或数据、明确的下一步（比如相关文章推荐或订阅）。</p>
+        </div>
+        <div class="priority-box">
+          <span class="priority-tag">优先级 4</span>
+          <h3>联系/行动页</h3>
+          <p><strong>为什么先做：</strong>如果你不提供明确的行动路径，用户看完就会走。行动页可以是联系表单、订阅入口、或产品购买链接。</p>
+          <p><strong>必须包含：</strong>明确的行动号召（CTA）、简单的表单或链接、降低用户行动的门槛（比如"不需要注册，直接订阅"）。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">为什么先做这些</h2>
+        <div class="advice-box">
+          <p><strong>验证方向：</strong>4 个页面足够你测试用户是否对你的内容感兴趣。如果没人访问核心内容页，说明你的选题或方向需要调整，而不是页面不够多。</p>
+          <p><strong>建立信任：</strong>关于页和首页的组合能在短时间内建立基本信任。用户不会因为页面少而不信任你，但会因为内容空洞而离开。</p>
+          <p><strong>获取反馈：</strong>页面少意味着你能快速迭代。根据用户反馈优化这 4 个页面，比做 10 个页面但每个都粗糙要有效得多。</p>
+          <p><strong>降低启动成本：</strong>4 个页面的内容量可控，你能在 1-2 周内完成并上线。快速上线意味着快速验证，快速验证意味着快速调整。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">不建议一开始做什么</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>❌ 复杂的分类体系</h3>
+            <ul>
+              <li>先写内容，再按内容自然分类</li>
+              <li>预设的分类往往与实际内容不匹配</li>
+              <li>等你有 10 篇以上内容再考虑分类</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>❌ 多语言版本</h3>
+            <ul>
+              <li>先把一种语言做深做透</li>
+              <li>多语言维护成本很高</li>
+              <li>等流量稳定后再扩展</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>❌ 复杂的会员系统</h3>
+            <ul>
+              <li>先靠免费内容建立用户基础</li>
+              <li>会员系统增加技术和运营负担</li>
+              <li>等你有 1000+ 活跃用户再考虑</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>❌ 大量自动化功能</h3>
+            <ul>
+              <li>手动流程能帮你理解用户需求</li>
+              <li>自动化在规模小的时候是过度设计</li>
+              <li>等流程跑通后再考虑自动化</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="start-box">
+        <h3>如果你只想先开始</h3>
+        <p>直接看 <a href="first-website-roadmap.html">从 0 到 1 做出第一个网站的路线图</a>，按第 3 步搭建这 4 个页面，今天就开始写内容。</p>
+      </div>
+    </div>
+
+    <section class="read-more-section">
+      <div class="container">
+        <h2 class="section-title">推荐阅读</h2>
+        <div class="read-more-grid">
+          <a href="first-website-roadmap.html" style="display: block; text-decoration: none; color: inherit;"><article class="read-more-card"><h4>从 0 到 1 做出第一个网站</h4><p>完整的 6 步路线图</p></article></a>
+          <a href="ai-content-workflow-checklist.html" style="display: block; text-decoration: none; color: inherit;"><article class="read-more-card"><h4>AI 内容站起步清单</h4><p>最小可行动作清单</p></article></a>
+          <a href="website-launch-checklist.html" style="display: block; text-decoration: none; color: inherit;"><article class="read-more-card"><h4>网站上线前检查清单</h4><p>确保上线前没有遗漏</p></article></a>
+          <a href="website-tool-recommendation.html" style="display: block; text-decoration: none; color: inherit;"><article class="read-more-card"><h4>如果只能先选一个建站工具</h4><p>按目标直接推荐</p></article></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <a href="index.html" class="btn">返回首页</a>
+        <a href="categories.html" class="btn-outline">查看全部分类</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 AI 站长工作流目录 · 面向中文出海创作者的工具与工作流站。</p>
+    </div>
+  </footer>
+</body>
+</html>
