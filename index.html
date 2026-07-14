@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="google-site-verification" content="13kFYTwhu4d01E2MAGse4isw_IIjgjAqJ3b-MQpTilk" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 站长工作流目录</title>
+  <meta name="description" content="面向中文出海创作者的 AI 工具与工作流目录站。帮助新手站长理解建站、内容生产、SEO 和变现路径。">
+  <style>
+    :root { --bg: #f7f6f2; --card: #ffffff; --text: #1f2937; --muted: #6b7280; --line: #e5e7eb; --primary: #0f766e; --primary-dark: #115e59; --max-width: 1080px; --radius: 16px; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { color: var(--primary-dark); }
+    .container { width: min(100% - 32px, var(--max-width)); margin: 0 auto; }
+    .site-header { background: rgba(255,255,255,0.85); border-bottom: 1px solid var(--line); position: sticky; top: 0; backdrop-filter: blur(12px); z-index: 10; }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
+    .logo { font-size: 20px; font-weight: 700; color: var(--text); }
+    .nav { display: flex; gap: 18px; flex-wrap: wrap; }
+    .nav a { color: var(--muted); font-size: 15px; font-weight: 500; padding: 4px 0; border-bottom: 2px solid transparent; }
+    .nav a:hover { color: var(--text); }
+    .nav a.active { color: var(--primary); border-bottom-color: var(--primary); }
+    .hero { padding: 72px 0 48px; text-align: center; }
+    .eyebrow { display: inline-block; background: #d1fae5; color: #0f766e; padding: 8px 22px; border-radius: 999px; font-size: 14px; font-weight: 600; letter-spacing: 0.02em; border: 1px solid #99f6e4; box-shadow: 0 1px 3px rgba(15, 118, 110, 0.08); margin-bottom: 24px; }
+    h1 { font-size: 42px; line-height: 1.2; margin: 0 0 20px; font-weight: 700; }
+    .hero .subtitle { max-width: 640px; margin: 0 auto 32px; color: var(--muted); font-size: 18px; }
+    .section { padding: 20px 0 64px; }
+    .section-title { font-size: 24px; margin: 0 0 20px; font-weight: 600; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); transition: box-shadow 0.2s ease, transform 0.2s ease; }
+    .card:hover { box-shadow: 0 10px 28px rgba(0,0,0,0.08); transform: translateY(-2px); }
+    .card-icon { width: 44px; height: 44px; background: #f0fdfa; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; color: var(--primary); font-size: 20px; font-weight: 700; }
+    .card h2 { margin: 0 0 10px; font-size: 18px; font-weight: 600; }
+    .card p { margin: 0; color: var(--muted); font-size: 15px; }
+    .decision-section { padding: 0 0 48px; }
+    .decision-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+    .decision-card { background: var(--card); border: 1.5px solid var(--primary); border-radius: var(--radius); padding: 28px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); transition: box-shadow 0.2s ease, transform 0.2s ease; display: flex; flex-direction: column; gap: 12px; height: 100%; }
+    .decision-card:hover { box-shadow: 0 10px 28px rgba(0,0,0,0.08); transform: translateY(-2px); }
+    .decision-label { display: inline-block; background: #ccfbf1; color: #115e59; padding: 4px 12px; border-radius: 999px; font-size: 12px; font-weight: 600; width: fit-content; }
+    .decision-card h2 { margin: 0; font-size: 20px; font-weight: 600; color: var(--text); }
+    .decision-card p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.6; flex: 1; }
+    .decision-card .link-text { color: var(--primary); font-weight: 600; font-size: 15px; margin-top: auto; display: block; }
+    .cta-section { text-align: center; padding: 32px 0 64px; }
+    .btn { display: inline-block; background: var(--primary); color: #fff; padding: 14px 32px; border-radius: 10px; font-size: 16px; font-weight: 600; transition: background 0.2s ease; }
+    .btn:hover { background: var(--primary-dark); color: #fff; }
+    .site-footer { border-top: 1px solid var(--line); padding: 24px 0 40px; color: var(--muted); font-size: 14px; text-align: center; }
+    @media (max-width: 768px) { h1 { font-size: 32px; } .header-inner { flex-direction: column; align-items: flex-start; gap: 12px; } .hero { padding: 48px 0 32px; } .hero .subtitle { font-size: 16px; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">AI 站长工作流目录</div>
+      <nav class="nav">
+        <a href="index.html" class="active">首页</a>
+        <a href="categories.html">分类页</a>
+        <a href="about.html">关于本站</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow">面向中文出海创作者</div>
+        <h1>AI 站长工作流目录</h1>
+        <p class="subtitle">帮助中文出海创作者快速选择 AI 工具、搭建网站和提升内容生产效率。</p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">本站内容</h2>
+        <div class="grid">
+          <article class="card">
+            <div class="card-icon">W</div>
+            <h2>建站工具</h2>
+            <p>帮助你选择合适的建站方案，快速上线你的网站项目。</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">C</div>
+            <h2>内容生产</h2>
+            <p>AI 写作、内容规划与批量生产工具，提升创作效率。</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">S</div>
+            <h2>SEO 工具</h2>
+            <p>关键词研究、页面优化与流量增长策略工具集合。</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">D</div>
+            <h2>设计配图</h2>
+            <p>适合新手的配图、封面、Logo 和站点视觉工具。</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">A</div>
+            <h2>自动化</h2>
+            <p>自动发布、数据采集和工作流自动化工具。</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">N</div>
+            <h2>数据分析</h2>
+            <p>网站访问、点击、出站与转化数据分析工具。</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">$</div>
+            <h2>收款支付</h2>
+            <p>适合出海创作者的支付、订阅与数字产品收款方案。</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">T</div>
+            <h2>工作流模板</h2>
+            <p>建站、内容、SEO、变现的可复制 SOP 和模板。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="decision-section">
+      <div class="container">
+        <h2 class="section-title">更多建站选择</h2>
+        <div class="decision-grid">
+          <a href="framer-vs-wix.html" style="display: flex; text-decoration: none; color: inherit;">
+            <article class="decision-card">
+              <span class="decision-label">建站工具</span>
+              <h2>Framer 和 Wix，新手该选哪个？</h2>
+              <p>从上手难度、页面美观度、自由度、SEO 等 8 个维度全面对比，帮你 5 分钟做出决定，不花冤枉钱。</p>
+              <span class="link-text">查看对比 →</span>
+            </article>
+          </a>
+          <a href="github-pages-vs-framer.html" style="display: flex; text-decoration: none; color: inherit;">
+            <article class="decision-card">
+              <span class="decision-label">建站工具</span>
+              <h2>GitHub Pages 和 Framer，该怎么选？</h2>
+              <p>一个完全免费但需要一点代码，一个视觉精致但需每月付费。从成本、上手难度、长期成长性等 9 个维度帮你判断。</p>
+              <span class="link-text">查看对比 →</span>
+            </article>
+          </a>
+          <a href="wix-vs-wordpress.html" style="display: flex; text-decoration: none; color: inherit;">
+            <article class="decision-card">
+              <span class="decision-label">建站工具</span>
+              <h2>Wix 和 WordPress，该选哪个？</h2>
+              <p>想快速上线还是做长期内容站？从 SEO、扩展性、维护成本等维度帮你判断短期方便和长期成长的取舍。</p>
+              <span class="link-text">查看对比 →</span>
+            </article>
+          </a>
+          <a href="framer-vs-wordpress.html" style="display: flex; text-decoration: none; color: inherit;">
+            <article class="decision-card">
+              <span class="decision-label">建站工具</span>
+              <h2>Framer 和 WordPress，该怎么选？</h2>
+              <p>视觉优先还是内容优先？从美观度、内容管理、扩展性等维度帮你判断哪个更符合你现在的阶段。</p>
+              <span class="link-text">查看对比 →</span>
+            </article>
+          </a>
+          <a href="notion-vs-framer.html" style="display: flex; text-decoration: none; color: inherit;">
+            <article class="decision-card">
+              <span class="decision-label">建站工具</span>
+              <h2>Notion 和 Framer，新手该选哪个？</h2>
+              <p>内容管理优先还是视觉设计优先？从内容组织、页面美观度、自由度等维度帮你判断。</p>
+              <span class="link-text">查看对比 →</span>
+            </article>
+          </a>
+          <a href="notion-vs-wordpress.html" style="display: flex; text-decoration: none; color: inherit;">
+            <article class="decision-card">
+              <span class="decision-label">建站工具</span>
+              <h2>Notion 和 WordPress，谁更适合做内容站？</h2>
+              <p>轻量内容库 vs 专业内容系统。从 SEO、可扩展性、长期成长等维度帮你判断。</p>
+              <span class="link-text">查看对比 →</span>
+            </article>
+          </a>
+          <a href="wordpress-vs-github-pages.html" style="display: flex; text-decoration: none; color: inherit;">
+            <article class="decision-card">
+              <span class="decision-label">建站工具</span>
+              <h2>WordPress 和 GitHub Pages，新手怎么选？</h2>
+              <p>全能 CMS vs 零成本静态站。从代码要求、SEO、维护成本、技术门槛等维度对比。</p>
+              <span class="link-text">查看对比 →</span>
+            </article>
+          </a>
+          <a href="wix-vs-github-pages.html" style="display: flex; text-decoration: none; color: inherit;">
+            <article class="decision-card">
+              <span class="decision-label">建站工具</span>
+              <h2>Wix 和 GitHub Pages，该怎么选？</h2>
+              <p>零代码平台 vs 代码托管方案。从上手难度、上线速度、维护复杂度、SEO 等维度对比。</p>
+              <span class="link-text">查看对比 →</span>
+            </article>
+          </a>
+        </div>
+      </div>
+    </section>
+    <section class="decision-section">
+      <div class="container">
+        <h2 class="section-title">新手先看</h2>
+        <div class="decision-grid">
+          <a href="beginner-website-tool-guide.html" style="display: flex; text-decoration: none; color: inherit;">
+            <article class="decision-card">
+              <span class="decision-label">选择指南</span>
+              <h2>新手第一个网站该用什么工具？</h2>
+              <p>按目标人群快速匹配最适合你的建站方案：想快速上线、想长期做 SEO、想低成本练手、想做漂亮页面。</p>
+              <span class="link-text">查看指南 →</span>
+            </article>
+          </a>
+          <a href="no-code-website-choice.html" style="display: flex; text-decoration: none; color: inherit;">
+            <article class="decision-card">
+              <span class="decision-label">选择指南</span>
+              <h2>不会代码的人，怎么选建站工具？</h2>
+              <p>零代码也能做出专业网站。按作品集、博客、内容站、工具站、落地页等场景直接对号入座。</p>
+              <span class="link-text">查看指南 →</span>
+            </article>
+          </a>
+          <a href="creator-starter-kit.html" style="display: flex; text-decoration: none; color: inherit;">
+            <article class="decision-card">
+              <span class="decision-label">资源包</span>
+              <h2>中文独立创作者起步包</h2>
+              <p>先看哪几篇、先做哪几个页面、先理解哪些工具差异、先避免哪些错误。收藏这个页面，按步骤推进。</p>
+              <span class="link-text">查看起步包 →</span>
+            </article>
+          </a>
+          <a href="tools-resource-hub.html" style="display: flex; text-decoration: none; color: inherit;">
+            <article class="decision-card">
+              <span class="decision-label">资源总览</span>
+              <h2>建站与内容工具资源总览</h2>
+              <p>按用途整理的创作者工具目录。不是罗列所有工具，而是帮你按阶段和目标快速找到该看的。</p>
+              <span class="link-text">查看资源总览 →</span>
+            </article>
+          </a>
+        </div>
+      </div>
+    </section>
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div style="background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); text-align: center;">
+          <h2 style="margin: 0 0 12px; font-size: 20px; font-weight: 600;">想少走弯路？</h2>
+          <p style="margin: 0 0 20px; color: var(--muted); font-size: 15px;">后续会整理建站工具选择清单、内容站起步包、新手路线图。</p>
+          <a href="creator-starter-kit.html" class="btn" style="padding: 12px 24px; font-size: 15px;">查看创作者起步包</a>
+        </div>
+      </div>
+    </section>
+    <section class="cta-section">
+      <div class="container">
+        <a href="categories.html" class="btn">查看完整分类</a>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 AI 站长工作流目录 · 面向中文出海创作者的工具与工作流站。</p>
+    </div>
+  </footer>
+</body>
+</html>
