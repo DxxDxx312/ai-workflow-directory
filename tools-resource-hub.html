@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="https://dxxdxx312.github.io/ai-workflow-directory/tools-resource-hub.html" />
+  <title>建站与内容工具资源总览 - AI 站长工作流目录</title>
+  <meta name="description" content="按用途整理的建站、内容、SEO、设计、变现工具资源总览。帮助中文独立创作者快速找到适合的工具。">
+  <style>
+    :root { --bg: #f7f6f2; --card: #ffffff; --text: #1f2937; --muted: #6b7280; --line: #e5e7eb; --primary: #0f766e; --primary-dark: #115e59; --max-width: 1080px; --radius: 16px; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { color: var(--primary-dark); }
+    .container { width: min(100% - 32px, var(--max-width)); margin: 0 auto; }
+    .site-header { background: rgba(255,255,255,0.85); border-bottom: 1px solid var(--line); position: sticky; top: 0; backdrop-filter: blur(12px); z-index: 10; }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
+    .logo { font-size: 20px; font-weight: 700; color: var(--text); }
+    .nav { display: flex; gap: 18px; flex-wrap: wrap; }
+    .nav a { color: var(--muted); font-size: 15px; font-weight: 500; padding: 4px 0; border-bottom: 2px solid transparent; }
+    .nav a:hover { color: var(--text); }
+    .nav a.active { color: var(--primary); border-bottom-color: var(--primary); }
+    .breadcrumb { padding: 16px 0 0; font-size: 13px; color: var(--muted); }
+    .breadcrumb a { color: var(--muted); }
+    .breadcrumb a:hover { color: var(--text); }
+    .breadcrumb span { color: var(--text); font-weight: 500; }
+    .hero { padding: 40px 0 32px; }
+    .eyebrow { display: inline-block; background: #d1fae5; color: #0f766e; padding: 8px 22px; border-radius: 999px; font-size: 14px; font-weight: 600; letter-spacing: 0.02em; border: 1px solid #99f6e4; box-shadow: 0 1px 3px rgba(15, 118, 110, 0.08); margin-bottom: 24px; }
+    h1 { font-size: 38px; line-height: 1.15; margin: 0 0 14px; font-weight: 700; }
+    .hero .intro { max-width: 760px; color: var(--muted); font-size: 17px; margin: 0 0 20px; }
+    .quick-summary { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 24px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); max-width: 760px; }
+    .quick-summary strong { color: var(--primary); font-weight: 600; }
+    .quick-summary p { margin: 0; font-size: 15px; color: var(--text); }
+    .section { padding: 20px 0 56px; }
+    .section-title { font-size: 24px; margin: 0 0 20px; font-weight: 600; }
+    .conclusion-box { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); }
+    .conclusion-box p { margin: 0 0 12px; color: var(--text); font-size: 16px; }
+    .conclusion-box p:last-child { margin-bottom: 0; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+    .resource-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); transition: box-shadow 0.2s ease, transform 0.2s ease; display: flex; flex-direction: column; gap: 10px; height: 100%; }
+    .resource-card:hover { box-shadow: 0 10px 28px rgba(0,0,0,0.08); transform: translateY(-2px); }
+    .resource-tag { display: inline-block; padding: 4px 12px; border-radius: 999px; font-size: 12px; font-weight: 600; margin-bottom: 4px; align-self: flex-start; width: fit-content; }
+    .tag-build { background: #ccfbf1; color: #115e59; }
+    .tag-content { background: #fef3c7; color: #92400e; }
+    .tag-seo { background: #e0e7ff; color: #3730a3; }
+    .tag-design { background: #fce7f3; color: #be185d; }
+    .tag-monetize { background: #f3f4f6; color: #374151; }
+    .resource-card h3 { margin: 0; font-size: 18px; font-weight: 600; }
+    .resource-card p { margin: 0; color: var(--muted); font-size: 15px; flex: 1; }
+    .resource-card a { font-weight: 600; font-size: 15px; margin-top: auto; display: block; }
+    .start-box { background: #f0fdfa; border: 1.5px solid var(--primary); border-radius: var(--radius); padding: 24px; margin: 32px 0; }
+    .start-box h3 { margin: 0 0 10px; font-size: 18px; font-weight: 600; color: var(--primary-dark); }
+    .start-box p { margin: 0; color: var(--text); font-size: 15px; }
+    .start-box a { font-weight: 600; }
+    .next-step-box { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); }
+    .next-step-box h3 { margin: 0 0 14px; font-size: 18px; font-weight: 600; }
+    .next-step-box ul { margin: 0; padding-left: 18px; color: var(--muted); font-size: 15px; line-height: 1.8; }
+    .next-step-box li { margin-bottom: 6px; }
+    .next-step-box strong { color: var(--text); }
+    .cta-section { text-align: center; padding: 20px 0 64px; }
+    .btn { display: inline-block; background: var(--primary); color: #fff; padding: 14px 28px; border-radius: 10px; font-size: 16px; font-weight: 600; transition: background 0.2s ease; margin: 0 6px 10px; }
+    .btn:hover { background: var(--primary-dark); color: #fff; }
+    .btn-outline { display: inline-block; background: transparent; color: var(--primary); border: 1.5px solid var(--primary); padding: 14px 28px; border-radius: 10px; font-size: 16px; font-weight: 600; transition: background 0.2s ease; margin: 0 6px 10px; }
+    .btn-outline:hover { background: #f0fdfa; color: var(--primary-dark); }
+    .site-footer { border-top: 1px solid var(--line); padding: 24px 0 40px; color: var(--muted); font-size: 14px; text-align: center; }
+    @media (max-width: 768px) { h1 { font-size: 30px; } .header-inner { flex-direction: column; align-items: flex-start; gap: 12px; } .hero { padding-top: 24px; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">AI 站长工作流目录</div>
+      <nav class="nav">
+        <a href="index.html">首页</a>
+        <a href="categories.html">分类页</a>
+        <a href="about.html">关于本站</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">首页</a> › <a href="categories.html">分类页</a> › <span>建站与内容工具资源总览</span>
+      </div>
+    </div>
+
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow">资源总览</div>
+        <h1>建站与内容工具资源总览</h1>
+        <p class="intro">按用途整理的创作者工具目录。不是罗列所有工具，而是帮你按阶段和目标快速找到该看的。</p>
+        <div class="quick-summary">
+          <p><strong>一句话总结：</strong>建站工具解决"怎么搭"，内容工具解决"写什么"，SEO 工具解决"怎么被找到"，变现工具解决"怎么收钱"。按你的当前阶段选，不要一次看全。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">先说结论</h2>
+        <div class="conclusion-box">
+          <p><strong>如果你还没建站：</strong>先看 <a href="website-tool-recommendation.html">编辑建议</a>，按目标选一个工具，今天就开始。</p>
+          <p><strong>如果你已经建站但没内容：</strong>先看 <a href="ai-content-site-roadmap.html">AI 内容站路线图</a>，理解内容生产流程。</p>
+          <p><strong>如果你已经在做内容但想变现：</strong>先看 <a href="creator-starter-kit.html">创作者起步包</a>，理解最小可变现结构。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">按用途整理</h2>
+        <div class="grid">
+          <article class="resource-card">
+            <span class="resource-tag tag-build">建站工具</span>
+            <h3>建站工具</h3>
+            <p>从 Framer、Wix、WordPress 到 GitHub Pages，不同目标对应不同工具。不要花太多时间选，先选一个开始。</p>
+            <a href="website-tool-recommendation.html">查看编辑建议 →</a>
+          </article>
+          <article class="resource-card">
+            <span class="resource-tag tag-content">内容生产</span>
+            <h3>内容生产</h3>
+            <p>AI 辅助写作、选题研究、文章结构规划、批量内容生成。关键是"人的判断 + AI 的效率"。</p>
+            <a href="ai-content-site-roadmap.html">查看内容站路线图 →</a>
+          </article>
+          <article class="resource-card">
+            <span class="resource-tag tag-seo">SEO / 关键词</span>
+            <h3>SEO / 关键词</h3>
+            <p>关键词研究、页面优化、搜索收录、长尾流量。SEO 是内容站长期变现的基础。</p>
+            <a href="website-launch-checklist.html">查看上线检查清单 →</a>
+          </article>
+          <article class="resource-card">
+            <span class="resource-tag tag-design">设计配图</span>
+            <h3>设计配图</h3>
+            <p>封面图、文章插图、品牌视觉、配色方案。好设计能让内容价值被更快感知。</p>
+            <a href="#">即将整理</a>
+          </article>
+          <article class="resource-card">
+            <span class="resource-tag tag-monetize">变现与增长</span>
+            <h3>变现与增长</h3>
+            <p>联盟营销、数字产品、订阅服务、广告变现。先有流量，再谈变现。</p>
+            <a href="creator-starter-kit.html">查看创作者起步包 →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="start-box">
+        <h3>如果你只想先开始</h3>
+        <p>不要在这里逛太久，直接打开 <a href="website-tool-recommendation.html">编辑建议：如果只能先选一个工具</a>，按你的目标选，今天就开始注册。</p>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">下一步怎么选</h2>
+        <div class="next-step-box">
+          <h3>按你的当前阶段选择</h3>
+          <ul>
+            <li><strong>完全新手：</strong>先看 <a href="beginner-website-tool-guide.html">新手第一个网站该用什么工具</a> → 再看 <a href="first-website-roadmap.html">从 0 到 1 路线图</a></li>
+            <li><strong>已有网站但缺内容：</strong>先看 <a href="ai-content-workflow-checklist.html">AI 内容站起步清单</a> → 再看 <a href="ai-content-site-roadmap.html">内容站路线图</a></li>
+            <li><strong>有内容但想变现：</strong>先看 <a href="creator-starter-kit.html">创作者起步包</a> → 再看 <a href="website-tool-recommendation.html">编辑建议</a></li>
+            <li><strong>不确定从哪开始：</strong>直接返回 <a href="categories.html">分类页</a>，按问题找答案</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <a href="website-tool-recommendation.html" class="btn">查看编辑建议</a>
+        <a href="creator-starter-kit.html" class="btn-outline">查看创作者起步包</a>
+        <a href="categories.html" class="btn-outline">返回分类页</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 AI 站长工作流目录 · 面向中文出海创作者的工具与工作流站。</p>
+    </div>
+  </footer>
+</body>
+</html>
