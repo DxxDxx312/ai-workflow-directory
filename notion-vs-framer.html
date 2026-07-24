@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="https://dxxdxx312.github.io/ai-workflow-directory/notion-vs-framer.html" />
+  <title>Notion 和 Framer，新手该选哪个？</title>
+  <meta name="description" content="从内容管理、视觉设计、自由度、SEO 等维度对比 Notion 和 Framer，帮你判断内容优先还是设计优先。">
+  <style>
+    :root { --bg: #f7f6f2; --card: #ffffff; --text: #1f2937; --muted: #6b7280; --line: #e5e7eb; --primary: #0f766e; --primary-dark: #115e59; --max-width: 1080px; --radius: 16px; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { color: var(--primary-dark); }
+    .container { width: min(100% - 32px, var(--max-width)); margin: 0 auto; }
+    .site-header { background: rgba(255,255,255,0.85); border-bottom: 1px solid var(--line); position: sticky; top: 0; backdrop-filter: blur(12px); z-index: 10; }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
+    .logo { font-size: 20px; font-weight: 700; color: var(--text); }
+    .nav { display: flex; gap: 18px; flex-wrap: wrap; }
+    .nav a { color: var(--muted); font-size: 15px; font-weight: 500; padding: 4px 0; border-bottom: 2px solid transparent; }
+    .nav a:hover { color: var(--text); }
+    .nav a.active { color: var(--primary); border-bottom-color: var(--primary); }
+    .breadcrumb { padding: 16px 0 0; font-size: 13px; color: var(--muted); }
+    .breadcrumb a { color: var(--muted); }
+    .breadcrumb a:hover { color: var(--text); }
+    .breadcrumb span { color: var(--text); font-weight: 500; }
+    .hero { padding: 40px 0 32px; }
+    .eyebrow { display: inline-block; background: #ccfbf1; color: #115e59; padding: 6px 14px; border-radius: 999px; font-size: 13px; font-weight: 600; margin-bottom: 16px; }
+    h1 { font-size: 38px; line-height: 1.15; margin: 0 0 14px; font-weight: 700; }
+    .hero .intro { max-width: 760px; color: var(--muted); font-size: 17px; margin: 0 0 20px; }
+    .quick-summary { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 24px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); max-width: 760px; }
+    .quick-summary strong { color: var(--primary); font-weight: 600; }
+    .quick-summary p { margin: 0; font-size: 15px; color: var(--text); }
+    .section { padding: 20px 0 56px; }
+    .section-title { font-size: 24px; margin: 0 0 20px; font-weight: 600; }
+    .conclusion-box { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); }
+    .conclusion-box p { margin: 0 0 12px; color: var(--text); font-size: 16px; }
+    .conclusion-box p:last-child { margin-bottom: 0; }
+    .compare-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+    .compare-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); }
+    .compare-card h3 { margin: 0 0 14px; font-size: 18px; font-weight: 600; }
+    .compare-card ul { margin: 0; padding-left: 18px; color: var(--muted); font-size: 15px; line-height: 1.8; }
+    .compare-card li { margin-bottom: 4px; }
+    .advice-box { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); }
+    .advice-box p { margin: 0 0 12px; color: var(--text); font-size: 16px; }
+    .advice-box p:last-child { margin-bottom: 0; }
+    .compare-more-section { padding: 20px 0 40px; }
+    .compare-more-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+    .compare-more-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.03); transition: box-shadow 0.2s ease, transform 0.2s ease; }
+    .compare-more-card:hover { box-shadow: 0 8px 20px rgba(0,0,0,0.06); transform: translateY(-2px); }
+    .compare-more-card h4 { margin: 0 0 6px; font-size: 16px; font-weight: 600; color: var(--text); }
+    .compare-more-card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.5; }
+    .start-box { background: #f0fdfa; border: 1.5px solid var(--primary); border-radius: var(--radius); padding: 24px; margin: 32px 0; }
+    .start-box h3 { margin: 0 0 10px; font-size: 18px; font-weight: 600; color: var(--primary-dark); }
+    .start-box p { margin: 0; color: var(--text); font-size: 15px; }
+    .start-box a { font-weight: 600; }
+    .cta-section { text-align: center; padding: 20px 0 64px; }
+    .btn { display: inline-block; background: var(--primary); color: #fff; padding: 14px 28px; border-radius: 10px; font-size: 16px; font-weight: 600; transition: background 0.2s ease; margin: 0 6px 10px; }
+    .btn:hover { background: var(--primary-dark); color: #fff; }
+    .btn-outline { display: inline-block; background: transparent; color: var(--primary); border: 1.5px solid var(--primary); padding: 14px 28px; border-radius: 10px; font-size: 16px; font-weight: 600; transition: background 0.2s ease; margin: 0 6px 10px; }
+    .btn-outline:hover { background: #f0fdfa; color: var(--primary-dark); }
+    .site-footer { border-top: 1px solid var(--line); padding: 24px 0 40px; color: var(--muted); font-size: 14px; text-align: center; }
+    @media (max-width: 768px) { h1 { font-size: 30px; } .header-inner { flex-direction: column; align-items: flex-start; gap: 12px; } .hero { padding-top: 24px; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">AI 站长工作流目录</div>
+      <nav class="nav">
+        <a href="index.html">首页</a>
+        <a href="categories.html" class="active">分类页</a>
+        <a href="about.html">关于本站</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">首页</a> › <a href="categories.html">分类页</a> › <span>Notion 和 Framer，新手该选哪个？</span>
+      </div>
+    </div>
+
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow">建站工具对比</div>
+        <h1>Notion 和 Framer，新手该选哪个？</h1>
+        <p class="intro">内容管理优先还是视觉设计优先？从内容组织、页面美观度、自由度等维度帮你判断。</p>
+        <div class="quick-summary">
+          <p><strong>一句话总结：</strong>做内容库选 Notion，做品牌站选 Framer。两者可以组合使用。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">先说结论</h2>
+        <div class="conclusion-box">
+          <p>Notion 和 Framer 的取舍本质是：<strong>内容组织 vs 视觉表现。</strong></p>
+          <p>Notion 让你快速搭建一个结构化的内容库，适合知识管理、文档站、wiki。Framer 让你做出设计师级别的品牌站，适合作品集、landing page。</p>
+          <p>如果你现在需要的是一个"能放内容、能搜索、能协作"的站点，Notion 更务实。如果你需要网站本身就是竞争力，Framer 值得投资。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">8 个维度对比</h2>
+        <div class="compare-grid">
+          <article class="compare-card">
+            <h3>上手难度</h3>
+            <ul>
+              <li><strong>Notion：</strong>极低，会打字就能用，块编辑器直觉性强</li>
+              <li><strong>Framer：</strong>需要理解设计系统概念，有学习曲线</li>
+            </ul>
+          </article>
+          <article class="compare-card">
+            <h3>页面美观度</h3>
+            <ul>
+              <li><strong>Notion：</strong>简洁但同质化，自定义空间有限</li>
+              <li><strong>Framer：</strong>设计师级别，动画和交互原生支持</li>
+            </ul>
+          </article>
+          <article class="compare-card">
+            <h3>内容组织</h3>
+            <ul>
+              <li><strong>Notion：</strong>数据库、页面嵌套、标签系统极其强大</li>
+              <li><strong>Framer：</strong>CMS 功能较新，适合轻量内容</li>
+            </ul>
+          </article>
+          <article class="compare-card">
+            <h3>SEO 能力</h3>
+            <ul>
+              <li><strong>Notion：</strong>基础 SEO，但页面结构不利于搜索引擎优化</li>
+              <li><strong>Framer：</strong>基础 SEO 支持，但不如专业 CMS 完善</li>
+            </ul>
+          </article>
+          <article class="compare-card">
+            <h3>协作能力</h3>
+            <ul>
+              <li><strong>Notion：</strong>实时协作、评论、权限管理极其成熟</li>
+              <li><strong>Framer：</strong>设计协作强，但内容协作有限</li>
+            </ul>
+          </article>
+          <article class="compare-card">
+            <h3>扩展性</h3>
+            <ul>
+              <li><strong>Notion：</strong>API 和集成丰富，但前端展示受限</li>
+              <li><strong>Framer：</strong>通过代码组件和 API 扩展，需要技术能力</li>
+            </ul>
+          </article>
+          <article class="compare-card">
+            <h3>价格</h3>
+            <ul>
+              <li><strong>Notion：</strong>个人免费，高级功能 $8-15/月</li>
+              <li><strong>Framer：</strong>免费版可用，高级功能 $15-25/月</li>
+            </ul>
+          </article>
+          <article class="compare-card">
+            <h3>适合人群</h3>
+            <ul>
+              <li><strong>Notion：</strong>知识管理者、文档站运营者、需要协作的团队</li>
+              <li><strong>Framer：</strong>设计师、产品人、顾问、需要网站本身就是竞争力的人</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">我的建议</h2>
+        <div class="advice-box">
+          <p><strong>选 Notion 如果你：</strong>需要快速搭建内容库、重视协作和知识管理、对视觉要求不高。</p>
+          <p><strong>选 Framer 如果你：</strong>需要网站本身就是说服力、重视视觉和交互、内容更新频率不高。</p>
+          <p><strong>组合方案：</strong>用 Notion 做内容库和文档站，用 Framer 做品牌展示页，两者通过链接互通。</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="start-box">
+        <h3>如果你只想先开始</h3>
+        <p>做内容库选 <a href="notion-vs-framer.html">Notion</a>，做品牌站选 <a href="notion-vs-framer.html">Framer</a>。或者直接看 <a href="website-tool-recommendation.html">编辑建议</a> 按目标直接推荐。</p>
+      </div>
+    </div>
+
+    <section class="compare-more-section">
+      <div class="container">
+        <h2 class="section-title">继续对比</h2>
+        <div class="compare-more-grid">
+          <a href="notion-vs-wordpress.html" style="display: block; text-decoration: none; color: inherit;">
+            <article class="compare-more-card">
+              <h4>Notion 和 WordPress</h4>
+              <p>轻量起步 vs 一步到位</p>
+            </article>
+          </a>
+          <a href="framer-vs-wix.html" style="display: block; text-decoration: none; color: inherit;">
+            <article class="compare-more-card">
+              <h4>Framer 和 Wix</h4>
+              <p>精致设计 vs 快速建站</p>
+            </article>
+          </a>
+          <a href="framer-vs-wordpress.html" style="display: block; text-decoration: none; color: inherit;">
+            <article class="compare-more-card">
+              <h4>Framer 和 WordPress</h4>
+              <p>视觉优先 vs 内容优先</p>
+            </article>
+          </a>
+          <a href="wordpress-vs-github-pages.html" style="display: block; text-decoration: none; color: inherit;">
+            <article class="compare-more-card">
+              <h4>WordPress 和 GitHub Pages</h4>
+              <p>全能 CMS vs 零成本静态站</p>
+            </article>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div style="background: #f0fdfa; border: 1.5px solid var(--primary); border-radius: var(--radius); padding: 24px; margin: 32px 0;">
+        <h3 style="margin: 0 0 10px; font-size: 18px; font-weight: 600; color: var(--primary-dark);">如果你已经大致有答案</h3>
+        <p style="margin: 0; color: var(--text); font-size: 15px; line-height: 1.8;">
+          <strong>想快速确定选哪个：</strong>去 <a href="website-tool-recommendation.html">编辑建议：如果只能先选一个工具</a>，按目标直接推荐。<br>
+          <strong>还不清楚怎么开始：</strong>去 <a href="first-website-roadmap.html">从 0 到 1 做出第一个网站的路线图</a>，按 6 步执行。<br>
+          <strong>想先理解新手怎么选：</strong>去 <a href="beginner-website-tool-guide.html">新手第一个网站该用什么工具</a>，10 分钟匹配。<br>
+          <strong>想按主题继续找：</strong>去 <a href="categories.html">分类页</a>，按问题找答案。
+        </p>
+      </div>
+    </div>
+
+    <section class="cta-section">
+      <div class="container">
+        <a href="index.html" class="btn">返回首页</a>
+        <a href="categories.html" class="btn-outline">查看全部分类</a>
+        <a href="website-tool-recommendation.html" class="btn-outline">编辑建议：选哪个工具</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 AI 站长工作流目录 · 面向中文出海创作者的工具与工作流站。</p>
+    </div>
+  </footer>
+</body>
+</html>
