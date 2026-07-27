@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="https://dxxdxx312.github.io/ai-workflow-directory/framer-vs-wix.html" />
+  <title>Framer 和 Wix，新手该选哪个？</title>
+  <meta name="description" content="从上手难度、页面美观度、自由度、SEO 等 8 个维度全面对比 Framer 和 Wix，帮你快速做出建站工具选择。">
+  <style>
+    :root { --bg: #f7f6f2; --card: #ffffff; --text: #1f2937; --muted: #6b7280; --line: #e5e7eb; --primary: #0f766e; --primary-dark: #115e59; --max-width: 1080px; --radius: 16px; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { color: var(--primary-dark); }
+    .container { width: min(100% - 32px, var(--max-width)); margin: 0 auto; }
+    .site-header { background: rgba(255,255,255,0.85); border-bottom: 1px solid var(--line); position: sticky; top: 0; backdrop-filter: blur(12px); z-index: 10; }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
+    .logo { font-size: 20px; font-weight: 700; color: var(--text); }
+    .nav { display: flex; gap: 18px; flex-wrap: wrap; }
+    .nav a { color: var(--muted); font-size: 15px; font-weight: 500; padding: 4px 0; border-bottom: 2px solid transparent; }
+    .nav a:hover { color: var(--text); }
+    .nav a.active { color: var(--primary); border-bottom-color: var(--primary); }
+    .breadcrumb { padding: 16px 0 0; font-size: 13px; color: var(--muted); }
+    .breadcrumb a { color: var(--muted); }
+    .breadcrumb a:hover { color: var(--text); }
+    .breadcrumb span { color: var(--text); font-weight: 500; }
+    .hero { padding: 40px 0 32px; }
+    .eyebrow { display: inline-block; background: #ccfbf1; color: #115e59; padding: 6px 14px; border-radius: 999px; font-size: 13px; font-weight: 600; margin-bottom: 16px; }
+    h1 { font-size: 38px; line-height: 1.15; margin: 0 0 14px; font-weight: 700; }
+    .hero .intro { max-width: 760px; color: var(--muted); font-size: 17px; margin: 0 0 20px; }
+    .quick-summary { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 24px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); max-width: 760px; }
+    .quick-summary strong { color: var(--primary); font-weight: 600; }
+    .quick-summary p { margin: 0; font-size: 15px; color: var(--text); }
+    .section { padding: 20px 0 56px; }
+    .section-title { font-size: 24px; margin: 0 0 20px; font-weight: 600; }
+    .conclusion-box { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); }
+    .conclusion-box p { margin: 0 0 12px; color: var(--text); font-size: 16px; }
+    .conclusion-box p:last-child { margin-bottom: 0; }
+    .compare-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+    .compare-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); }
+    .compare-card h3 { margin: 0 0 14px; font-size: 18px; font-weight: 600; }
+    .compare-card ul { margin: 0; padding-left: 18px; color: var(--muted); font-size: 15px; line-height: 1.8; }
+    .compare-card li { margin-bottom: 4px; }
+    .advice-box { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); }
+    .advice-box p { margin: 0 0 12px; color: var(--text); font-size: 16px; }
+    .advice-box p:last-child { margin-bottom: 0; }
+    .compare-more-section { padding: 20px 0 40px; }
+    .compare-more-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+    .compare-more-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.03); transition: box-shadow 0.2s ease, transform 0.2s ease; }
+    .compare-more-card:hover { box-shadow: 0 8px 20px rgba(0,0,0,0.06); transform: translateY(-2px); }
+    .compare-more-card h4 { margin: 0 0 6px; font-size: 16px; font-weight: 600; color: var(--text); }
+    .compare-more-card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.5; }
+    .start-box { background: #f0fdfa; border: 1.5px solid var(--primary); border-radius: var(--radius); padding: 24px; margin: 32px 0; }
+    .start-box h3 { margin: 0 0 10px; font-size: 18px; font-weight: 600; color: var(--primary-dark); }
+    .start-box p { margin: 0; color: var(--text); font-size: 15px; }
+    .start-box a { font-weight: 600; }
+    .cta-section { text-align: center; padding: 20px 0 64px; }
+    .btn { display: inline-block; background: var(--primary); color: #fff; padding: 14px 28px; border-radius: 10px; font-size: 16px; font-weight: 600; transition: background 0.2s ease; margin: 0 6px 10px; }
+    .btn:hover { background: var(--primary-dark); color: #fff; }
+    .btn-outline { display: inline-block; background: transparent; color: var(--primary); border: 1.5px solid var(--primary); padding: 14px 28px; border-radius: 10px; font-size: 16px; font-weight: 600; transition: background 0.2s ease; margin: 0 6px 10px; }
+    .btn-outline:hover { background: #f0fdfa; color: var(--primary-dark); }
+    .site-footer { border-top: 1px solid var(--line); padding: 24px 0 40px; color: var(--muted); font-size: 14px; text-align: center; }
+    @media (max-width: 768px) { h1 { font-size: 30px; } .header-inner { flex-direction: column; align-items: flex-start; gap: 12px; } .hero { padding-top: 24px; } }
+
+    /* 下一步该看什么 */
+    .next-step-section { padding: 20px 0 40px; }
+    .next-step-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+    .next-step-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.03); transition: box-shadow 0.2s ease, transform 0.2s ease; }
+    .next-step-card:hover { box-shadow: 0 8px 20px rgba(0,0,0,0.06); transform: translateY(-2px); }
+    .next-step-card h4 { margin: 0 0 6px; font-size: 15px; font-weight: 600; color: var(--text); }
+    .next-step-card p { margin: 0 0 10px; color: var(--muted); font-size: 13px; line-height: 1.5; }
+    .next-step-card a { display: inline-block; background: var(--primary); color: #fff; padding: 8px 16px; border-radius: 8px; font-size: 13px; font-weight: 600; transition: background 0.2s ease; }
+    .next-step-card a:hover { background: var(--primary-dark); color: #fff; }
+    .next-step-card a.outline { background: transparent; color: var(--primary); border: 1.5px solid var(--primary); }
+    .next-step-card a.outline:hover { background: #f0fdfa; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">AI 站长工作流目录</div>
+      <nav class="nav">
+        <a href="index.html">首页</a>
+        <a href="categories.html" class="active">分类页</a>
+        <a href="tools-resource-hub.html">资源总入口</a>
+        <a href="starter-kit.html">起步包</a>
+        <a href="about.html">关于本站</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">首页</a> › <a href="categories.html">分类页</a> › <span>Framer 和 Wix，新手该选哪个？</span>
+      </div>
+    </div>
+
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow">建站工具对比</div>
+        <h1>Framer 和 Wix，新手该选哪个？</h1>
+        <p class="intro">从上手难度、页面美观度、自由度、SEO 等 8 个维度全面对比，帮你快速做出建站工具选择，不花冤枉钱。</p>
+        <div class="quick-summary">
+          <p><strong>一句话总结：</strong>如果你追求"精致"和"设计感"，选 Framer；如果你追求"快"和"稳"，选 Wix。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">先说结论</h2>
+        <div class="conclusion-box">
+          <p><strong>如果你想更快做出好看的页面，Framer 更适合。</strong>它的设计自由度和视觉品质是 Wix 无法比拟的。</p>
+          <p><strong>如果你更在意成熟生态和长期扩展，Wix 更适合。</strong>它的内容管理、电商、SEO 向导对新手更友好。</p>
+          <p><strong>如果你是新手，只想先上线，我建议先看 Wix。</strong>Framer 的学习曲线会让你在第一步就卡住。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <h2 class="section-title">5 分钟对比表</h2>
+        <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+          <table style="width: 100%; border-collapse: collapse; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; box-shadow: 0 6px 18px rgba(0,0,0,0.04); min-width: 500px;">
+            <thead>
+              <tr style="background: #f0fdfa;">
+                <th style="padding: 14px 16px; text-align: left; font-weight: 600; color: var(--primary-dark); font-size: 15px; border-bottom: 1px solid var(--line);">对比维度</th>
+                <th style="padding: 14px 16px; text-align: left; font-weight: 600; color: var(--primary-dark); font-size: 15px; border-bottom: 1px solid var(--line);">Framer</th>
+                <th style="padding: 14px 16px; text-align: left; font-weight: 600; color: var(--primary-dark); font-size: 15px; border-bottom: 1px solid var(--line);">Wix</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding: 12px 16px; font-size: 15px; border-bottom: 1px solid var(--line); font-weight: 500;">上手难度</td>
+                <td style="padding: 12px 16px; font-size: 15px; border-bottom: 1px solid var(--line); color: var(--muted);">中等，需理解设计系统</td>
+                <td style="padding: 12px 16px; font-size: 15px; border-bottom: 1px solid var(--line); color: var(--muted);">简单，拖拽即可</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 16px; font-size: 15px; border-bottom: 1px solid var(--line); font-weight: 500;">设计自由度</td>
+                <td style="padding: 12px 16px; font-size: 15px; border-bottom: 1px solid var(--line); color: var(--muted);">极高，像素级控制</td>
+                <td style="padding: 12px 16px; font-size: 15px; border-bottom: 1px solid var(--line); color: var(--muted);">中等，模板框架内调整</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 16px; font-size: 15px; border-bottom: 1px solid var(--line); font-weight: 500;">SEO</td>
+                <td style="padding: 12px 16px; font-size: 15px; border-bottom: 1px solid var(--line); color: var(--muted);">基础支持，CMS 较新</td>
+                <td style="padding: 12px 16px; font-size: 15px; border-bottom: 1px solid var(--line); color: var(--muted);">内置向导，对新手友好</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 16px; font-size: 15px; border-bottom: 1px solid var(--line); font-weight: 500;">成本</td>
+                <td style="padding: 12px 16px; font-size: 15px; border-bottom: 1px solid var(--line); color: var(--muted);">$15-25/月</td>
+                <td style="padding: 12px 16px; font-size: 15px; border-bottom: 1px solid var(--line); color: var(--muted);">$14-39/月</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 16px; font-size: 15px; font-weight: 500;">适合谁</td>
+                <td style="padding: 12px 16px; font-size: 15px; color: var(--muted);">设计师、产品人、顾问</td>
+                <td style="padding: 12px 16px; font-size: 15px; color: var(--muted);">小企业主、自由职业者、新手</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">8 个维度详细对比</h2>
+        <div class="compare-grid">
+          <article class="compare-card">
+            <h3>上手难度</h3>
+            <ul>
+              <li><strong>Framer：</strong>需要理解设计系统概念，有学习曲线，但掌握后效率极高</li>
+              <li><strong>Wix：</strong>拖拽式操作，几小时就能做出完整网站，零门槛</li>
+            </ul>
+          </article>
+          <article class="compare-card">
+            <h3>页面美观度</h3>
+            <ul>
+              <li><strong>Framer：</strong>设计师级别，动画和交互原生支持，视觉效果顶尖</li>
+              <li><strong>Wix：</strong>模板丰富但同质化，自定义空间有限</li>
+            </ul>
+          </article>
+          <article class="compare-card">
+            <h3>设计自由度</h3>
+            <ul>
+              <li><strong>Framer：</strong>完全自由，像素级控制，适合有设计需求的人</li>
+              <li><strong>Wix：</strong>在模板框架内调整，自由度中等</li>
+            </ul>
+          </article>
+          <article class="compare-card">
+            <h3>SEO 能力</h3>
+            <ul>
+              <li><strong>Framer：</strong>基础 SEO 支持，但不如专业 CMS 完善</li>
+              <li><strong>Wix：</strong>内置 SEO 向导，对新手友好，但高级优化有限</li>
+            </ul>
+          </article>
+          <article class="compare-card">
+            <h3>内容管理</h3>
+            <ul>
+              <li><strong>Framer：</strong>CMS 功能较新，适合轻量内容，博客功能弱</li>
+              <li><strong>Wix：</strong>成熟的内容管理，博客、电商、会员系统完善</li>
+            </ul>
+          </article>
+          <article class="compare-card">
+            <h3>扩展性</h3>
+            <ul>
+              <li><strong>Framer：</strong>通过代码组件和 API 扩展，需要技术能力</li>
+              <li><strong>Wix：</strong>应用市场丰富，插件生态成熟，零代码扩展</li>
+            </ul>
+          </article>
+          <article class="compare-card">
+            <h3>价格</h3>
+            <ul>
+              <li><strong>Framer：</strong>免费版可用，但自定义域名和高级功能需付费（约 $15-25/月）</li>
+              <li><strong>Wix：</strong>免费版有广告，去广告需付费（约 $14-39/月）</li>
+            </ul>
+          </article>
+          <article class="compare-card">
+            <h3>适合人群</h3>
+            <ul>
+              <li><strong>Framer：</strong>设计师、产品人、顾问、需要网站本身就是竞争力的人</li>
+              <li><strong>Wix：</strong>小企业主、自由职业者、想快速上线的人</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">谁适合谁</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px;">
+          <div style="background: var(--card); border: 1.5px solid var(--primary); border-radius: var(--radius); padding: 24px; box-shadow: 0 6px 18px rgba(0,0,0,0.04);">
+            <span style="display: inline-block; background: var(--primary); color: #fff; padding: 4px 12px; border-radius: 999px; font-size: 12px; font-weight: 600; margin-bottom: 12px;">选 Framer</span>
+            <h3 style="margin: 0 0 10px; font-size: 18px; font-weight: 600;">如果你需要网站本身就是竞争力</h3>
+            <ul style="margin: 0; padding-left: 18px; color: var(--muted); font-size: 15px; line-height: 1.8;">
+              <li>你是设计师、产品人、顾问</li>
+              <li>你愿意投入时间学习设计系统</li>
+              <li>你有审美要求，不满足于模板</li>
+              <li>你需要动画和交互原生支持</li>
+            </ul>
+          </div>
+          <div style="background: var(--card); border: 1.5px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: 0 6px 18px rgba(0,0,0,0.04);">
+            <span style="display: inline-block; background: #f0fdfa; color: var(--primary-dark); padding: 4px 12px; border-radius: 999px; font-size: 12px; font-weight: 600; margin-bottom: 12px;">选 Wix</span>
+            <h3 style="margin: 0 0 10px; font-size: 18px; font-weight: 600;">如果你只想快速上线、不折腾</h3>
+            <ul style="margin: 0; padding-left: 18px; color: var(--muted); font-size: 15px; line-height: 1.8;">
+              <li>你是小企业主、自由职业者</li>
+              <li>你不想学技术，几小时就要上线</li>
+              <li>你需要博客、电商、会员系统</li>
+              <li>你依赖 SEO 向导和客服支持</li>
+            </ul>
+          </div>
+        </div>
+        <div style="background: #f0fdfa; border: 1.5px solid var(--primary); border-radius: var(--radius); padding: 20px 24px; margin-top: 20px; text-align: center;">
+          <p style="margin: 0; color: var(--text); font-size: 15px;"><strong>折中方案：</strong>用 Wix 快速验证想法，等有流量和收入后再迁移到 Framer 或 WordPress。</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="start-box">
+        <h3>如果你只想先开始</h3>
+        <p>不要继续对比了，直接看 <a href="website-tool-recommendation.html">编辑建议：如果只能先选一个工具</a>，按你的目标直接选，今天就开始。</p>
+      </div>
+    </div>
+
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div style="background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); text-align: center;">
+          <h2 style="margin: 0 0 12px; font-size: 20px; font-weight: 600;">还没决定？</h2>
+          <p style="margin: 0 0 20px; color: var(--muted); font-size: 15px;">直接看编辑建议，按你的目标匹配最适合的工具；或者跟着路线图，今天就开始。</p>
+          <a href="website-tool-recommendation.html" class="btn" style="padding: 12px 24px; font-size: 15px; margin-right: 8px;">查看编辑建议</a>
+          <a href="first-website-roadmap.html" class="btn-outline" style="padding: 12px 24px; font-size: 15px;">查看新手路线图</a>
+        </div>
+      </div>
+    </section>
+    <section class="compare-more-section">
+      <div class="container">
+        <h2 class="section-title">继续对比</h2>
+        <div class="compare-more-grid">
+          <a href="github-pages-vs-framer.html" style="display: block; text-decoration: none; color: inherit;">
+            <article class="compare-more-card">
+              <h4>GitHub Pages 和 Framer</h4>
+              <p>免费静态站 vs 精致设计工具</p>
+            </article>
+          </a>
+          <a href="wix-vs-wordpress.html" style="display: block; text-decoration: none; color: inherit;">
+            <article class="compare-more-card">
+              <h4>Wix 和 WordPress</h4>
+              <p>快速上线 vs 长期 SEO</p>
+            </article>
+          </a>
+          <a href="framer-vs-wordpress.html" style="display: block; text-decoration: none; color: inherit;">
+            <article class="compare-more-card">
+              <h4>Framer 和 WordPress</h4>
+              <p>视觉优先 vs 内容优先</p>
+            </article>
+          </a>
+          <a href="notion-vs-framer.html" style="display: block; text-decoration: none; color: inherit;">
+            <article class="compare-more-card">
+              <h4>Notion 和 Framer</h4>
+              <p>内容库 vs 设计站</p>
+            </article>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div style="background: #f0fdfa; border: 1.5px solid var(--primary); border-radius: var(--radius); padding: 24px; margin: 32px 0;">
+        <h3 style="margin: 0 0 10px; font-size: 18px; font-weight: 600; color: var(--primary-dark);">如果你已经大致有答案</h3>
+        <p style="margin: 0; color: var(--text); font-size: 15px; line-height: 1.8;">
+          <strong>想快速确定选哪个：</strong>去 <a href="website-tool-recommendation.html">编辑建议：如果只能先选一个工具</a>，按目标直接推荐。<br>
+          <strong>还不清楚怎么开始：</strong>去 <a href="first-website-roadmap.html">从 0 到 1 做出第一个网站的路线图</a>，按 6 步执行。<br>
+          <strong>想先理解新手怎么选：</strong>去 <a href="beginner-website-tool-guide.html">新手第一个网站该用什么工具</a>，10 分钟匹配。<br>
+          <strong>想按主题继续找：</strong>去 <a href="categories.html">分类页</a>，按问题找答案。
+        </p>
+      </div>
+    </div>
+
+    <section class="cta-section">
+      <div class="container">
+        <a href="index.html" class="btn">返回首页</a>
+        <a href="categories.html" class="btn-outline">查看全部分类</a>
+        <a href="website-tool-recommendation.html" class="btn-outline">编辑建议：选哪个工具</a>
+      </div>
+    </section>
+
+    <section class="next-step-section">
+      <div class="container">
+        <h2 class="section-title">下一步该看什么</h2>
+        <div class="next-step-grid">
+          <div class="next-step-card">
+            <h4>🔍 同类对比</h4>
+            <p>Framer 和 WordPress 怎么选？</p>
+            <a href="framer-vs-wordpress.html">查看对比结论</a>
+          </div>
+          <div class="next-step-card">
+            <h4>🔍 同类对比</h4>
+            <p>Wix 和 WordPress 怎么选？</p>
+            <a href="wix-vs-wordpress.html">查看对比结论</a>
+          </div>
+          <div class="next-step-card">
+            <h4>🎁 新手起步</h4>
+            <p>领取《新手 AI 建站起步包》</p>
+            <a href="starter-kit.html">领取起步包</a>
+          </div>
+          <div class="next-step-card">
+            <h4>📋 工具推荐</h4>
+            <p>编辑按目标直接推荐工具</p>
+            <a href="website-tool-recommendation.html" class="outline">查看推荐清单</a>
+          </div>
+          <div class="next-step-card">
+            <h4>🗺️ 路线图</h4>
+            <p>从 0 到 1 做出第一个网站</p>
+            <a href="first-website-roadmap.html" class="outline">去看路线图</a>
+          </div>
+          <div class="next-step-card">
+            <h4>📦 资源总入口</h4>
+            <p>全站工具/模板/清单汇总</p>
+            <a href="tools-resource-hub.html" class="outline">查看资源总入口</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 AI 站长工作流目录 · 面向中文出海创作者的工具与工作流站。</p>
+    </div>
+  </footer>
+</body>
+</html>
