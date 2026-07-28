@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="https://dxxdxx312.github.io/ai-workflow-directory/tools-resource-hub.html" />
+  <title>中文站长工具资源总入口 - AI 站长工作流目录</title>
+  <meta name="description" content="建站工具、内容工具、SEO工具、自动化工具一站式资源入口。新手站长从这里开始，按目标直接匹配工具、对比结论和可下载资源。">
+  <style>
+    :root { --bg: #f7f6f2; --card: #ffffff; --text: #1f2937; --muted: #6b7280; --line: #e5e7eb; --primary: #0f766e; --primary-dark: #115e59; --max-width: 1080px; --radius: 16px; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { color: var(--primary-dark); }
+    .container { width: min(100% - 32px, var(--max-width)); margin: 0 auto; }
+    .site-header { background: rgba(255,255,255,0.85); border-bottom: 1px solid var(--line); position: sticky; top: 0; backdrop-filter: blur(12px); z-index: 10; }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
+    .logo { font-size: 20px; font-weight: 700; color: var(--text); }
+    .nav { display: flex; gap: 18px; flex-wrap: wrap; }
+    .nav a { color: var(--muted); font-size: 15px; font-weight: 500; padding: 4px 0; border-bottom: 2px solid transparent; }
+    .nav a:hover { color: var(--text); }
+    .nav a.active { color: var(--primary); border-bottom-color: var(--primary); }
+    .breadcrumb { padding: 16px 0 0; font-size: 13px; color: var(--muted); }
+    .breadcrumb a { color: var(--muted); }
+    .breadcrumb a:hover { color: var(--text); }
+    .breadcrumb span { color: var(--text); font-weight: 500; }
+    .hero { padding: 48px 0 32px; }
+    .eyebrow { display: inline-block; background: #d1fae5; color: #0f766e; padding: 8px 22px; border-radius: 999px; font-size: 14px; font-weight: 600; letter-spacing: 0.02em; border: 1px solid #99f6e4; box-shadow: 0 1px 3px rgba(15, 118, 110, 0.08); margin-bottom: 24px; }
+    h1 { font-size: 38px; line-height: 1.15; margin: 0 0 14px; font-weight: 700; }
+    .hero .intro { max-width: 760px; color: var(--muted); font-size: 17px; margin: 0 0 20px; }
+    .quick-summary { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 24px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); max-width: 760px; }
+    .quick-summary strong { color: var(--primary); font-weight: 600; }
+    .quick-summary p { margin: 0; font-size: 15px; color: var(--text); }
+    .section { padding: 20px 0 48px; }
+    .section-title { font-size: 24px; margin: 0 0 20px; font-weight: 600; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+    .resource-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); transition: box-shadow 0.2s ease, transform 0.2s ease; display: flex; flex-direction: column; gap: 10px; height: 100%; }
+    .resource-card:hover { box-shadow: 0 10px 28px rgba(0,0,0,0.08); transform: translateY(-2px); }
+    .resource-tag { display: inline-block; padding: 4px 12px; border-radius: 999px; font-size: 12px; font-weight: 600; margin-bottom: 4px; align-self: flex-start; width: fit-content; }
+    .tag-build { background: #ccfbf1; color: #115e59; }
+    .tag-content { background: #fef3c7; color: #92400e; }
+    .tag-seo { background: #e0e7ff; color: #3730a3; }
+    .tag-monetize { background: #f3f4f6; color: #374151; }
+    .resource-card h3 { margin: 0; font-size: 18px; font-weight: 600; }
+    .resource-card p { margin: 0; color: var(--muted); font-size: 15px; flex: 1; }
+    .resource-card a { font-weight: 600; font-size: 15px; margin-top: auto; display: block; }
+    .monetize-section { background: linear-gradient(135deg, #f0fdfa 0%, #ffffff 100%); border: 1.5px solid var(--primary); border-radius: var(--radius); padding: 32px; }
+    .monetize-section h2 { margin: 0 0 12px; font-size: 24px; font-weight: 600; }
+    .monetize-section > p { margin: 0 0 24px; color: var(--muted); font-size: 16px; }
+    .monetize-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+    .monetize-card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 24px; }
+    .monetize-card h3 { margin: 0 0 10px; font-size: 17px; font-weight: 600; }
+    .monetize-card p { margin: 0 0 14px; color: var(--muted); font-size: 14px; line-height: 1.6; }
+    .monetize-card a { display: inline-block; background: var(--primary); color: #fff; padding: 10px 20px; border-radius: 8px; font-size: 14px; font-weight: 600; }
+    .monetize-card a:hover { background: var(--primary-dark); color: #fff; }
+    .monetize-card a.outline { background: transparent; color: var(--primary); border: 1.5px solid var(--primary); }
+    .monetize-card a.outline:hover { background: #f0fdfa; }
+    .start-box { background: #f0fdfa; border: 1.5px solid var(--primary); border-radius: var(--radius); padding: 24px; margin: 32px 0; }
+    .start-box h3 { margin: 0 0 10px; font-size: 18px; font-weight: 600; color: var(--primary-dark); }
+    .start-box p { margin: 0; color: var(--text); font-size: 15px; }
+    .start-box a { font-weight: 600; }
+    .bottom-cta { text-align: center; padding: 20px 0 64px; }
+    .btn { display: inline-block; background: var(--primary); color: #fff; padding: 14px 28px; border-radius: 10px; font-size: 16px; font-weight: 600; transition: background 0.2s ease; margin: 0 6px 10px; }
+    .btn:hover { background: var(--primary-dark); color: #fff; }
+    .btn-outline { display: inline-block; background: transparent; color: var(--primary); border: 1.5px solid var(--primary); padding: 14px 28px; border-radius: 10px; font-size: 16px; font-weight: 600; transition: background 0.2s ease; margin: 0 6px 10px; }
+    .btn-outline:hover { background: #f0fdfa; color: var(--primary-dark); }
+    .site-footer { border-top: 1px solid var(--line); padding: 24px 0 40px; color: var(--muted); font-size: 14px; text-align: center; }
+    @media (max-width: 768px) { h1 { font-size: 30px; } .header-inner { flex-direction: column; align-items: flex-start; gap: 12px; } .hero { padding-top: 24px; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">AI 站长工作流目录</div>
+      <nav class="nav">
+        <a href="index.html">首页</a>
+        <a href="categories.html">分类页</a>
+        <a href="tools-resource-hub.html" class="active">资源总入口</a>
+        <a href="starter-kit.html">起步包</a>
+        <a href="about.html">关于本站</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">首页</a> › <span>资源总入口</span>
+      </div>
+    </div>
+
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow">全站资源中枢</div>
+        <h1>中文站长工具资源总入口</h1>
+        <p class="intro">给想建站、做内容、搞 SEO 和变现的中文出海创作者。不用到处搜，这里按目标直接匹配工具、对比结论和可下载资源。</p>
+        <div class="quick-summary">
+          <p><strong>一句话总结：</strong>建站工具解决"怎么搭"，内容工具解决"写什么"，SEO 工具解决"怎么被找到"，变现工具解决"怎么收钱"。按你的当前阶段选，不要一次看全。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">按用途整理</h2>
+        <div class="grid">
+          <article class="resource-card">
+            <span class="resource-tag tag-build">建站工具</span>
+            <h3>建站工具</h3>
+            <p>从 Framer、Wix、WordPress 到 GitHub Pages，不同目标对应不同工具。不要花太多时间选，先选一个开始。</p>
+            <a href="website-tool-recommendation.html">查看编辑按目标推荐的建站工具 →</a>
+          </article>
+          <article class="resource-card">
+            <span class="resource-tag tag-content">内容生产</span>
+            <h3>内容生产</h3>
+            <p>AI 辅助写作、选题研究、文章结构规划、批量内容生成。关键是"人的判断 + AI 的效率"。</p>
+            <a href="first-website-roadmap.html">查看内容站生产路线图 →</a>
+          </article>
+          <article class="resource-card">
+            <span class="resource-tag tag-seo">SEO / 关键词</span>
+            <h3>SEO / 关键词</h3>
+            <p>关键词研究、页面优化、搜索收录、长尾流量。SEO 是内容站长期变现的基础。</p>
+            <a href="first-website-roadmap.html">查看路线图里的 SEO 配置步骤 →</a>
+          </article>
+          <article class="resource-card">
+            <span class="resource-tag tag-monetize">变现与增长</span>
+            <h3>变现与增长</h3>
+            <p>联盟营销、数字产品、订阅服务、广告变现。先有流量，再谈变现。</p>
+            <a href="starter-kit.html">领取新手建站起步包开始变现 →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="monetize-section">
+          <h2>可直接使用的资源与工具</h2>
+          <p>不只是推荐，这里提供能直接上手或下载的变现资源。</p>
+          <div class="monetize-grid">
+            <div class="monetize-card">
+              <h3>🛒 Affiliate 工具推荐</h3>
+              <p>按目标人群匹配的最优建站工具，含官方注册入口和优惠码。每款都经过实测，不是硬广。</p>
+              <a href="website-tool-recommendation.html">查看推荐清单</a>
+            </div>
+            <div class="monetize-card">
+              <h3>📥 可下载资源</h3>
+              <p>工具选择清单、6 步路线图 PDF、常见错误手册。免费下载，打印即用。</p>
+              <a href="starter-kit.html#download" class="outline">去起步包页下载</a>
+            </div>
+            <div class="monetize-card">
+              <h3>📦 付费起步包 / 模板包</h3>
+              <p>含可编辑网站模板、完整文案结构、affiliate 配置指南。适合想跳过试错直接上手的人。</p>
+              <a href="starter-kit.html" class="outline">查看起步包详情</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="start-box">
+        <h3>如果你只想先开始</h3>
+        <p>不要在这里逛太久，直接打开 <a href="website-tool-recommendation.html">编辑建议：如果只能先选一个工具</a>，按你的目标选，今天就开始注册。</p>
+      </div>
+    </div>
+
+    <section class="bottom-cta">
+      <div class="container">
+        <a href="website-tool-recommendation.html" class="btn">查看编辑建议</a>
+        <a href="starter-kit.html" class="btn-outline">领取新手起步包</a>
+        <a href="first-website-roadmap.html" class="btn-outline">查看新手路线图</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 AI 站长工作流目录 · 面向中文出海创作者的工具与工作流站。</p>
+    </div>
+  </footer>
+</body>
+</html>
