@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="https://dxxdxx312.github.io/ai-workflow-directory/starter-kit.html" />
+  <title>新手 AI 建站起步包 - AI 站长工作流目录</title>
+  <meta name="description" content="新手第一个网站该怎么开始？30 分钟看完这份速查包，直接动手。含工具选择结论、6 步路线图和避坑清单。">
+  <style>
+    :root { --bg: #f7f6f2; --card: #ffffff; --text: #1f2937; --muted: #6b7280; --line: #e5e7eb; --primary: #0f766e; --primary-dark: #115e59; --max-width: 1080px; --radius: 16px; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { color: var(--primary-dark); }
+    .container { width: min(100% - 32px, var(--max-width)); margin: 0 auto; }
+    .site-header { background: rgba(255,255,255,0.85); border-bottom: 1px solid var(--line); position: sticky; top: 0; backdrop-filter: blur(12px); z-index: 10; }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
+    .logo { font-size: 20px; font-weight: 700; color: var(--text); }
+    .nav { display: flex; gap: 18px; flex-wrap: wrap; }
+    .nav a { color: var(--muted); font-size: 15px; font-weight: 500; padding: 4px 0; border-bottom: 2px solid transparent; }
+    .nav a:hover { color: var(--text); }
+    .nav a.active { color: var(--primary); border-bottom-color: var(--primary); }
+    .breadcrumb { padding: 16px 0 0; font-size: 13px; color: var(--muted); }
+    .breadcrumb a { color: var(--muted); }
+    .breadcrumb a:hover { color: var(--text); }
+    .breadcrumb span { color: var(--text); font-weight: 500; }
+    .hero { padding: 56px 0 40px; }
+    .eyebrow { display: inline-block; background: #d1fae5; color: #0f766e; padding: 8px 22px; border-radius: 999px; font-size: 14px; font-weight: 600; letter-spacing: 0.02em; border: 1px solid #99f6e4; box-shadow: 0 1px 3px rgba(15, 118, 110, 0.08); margin-bottom: 24px; }
+    h1 { font-size: 38px; line-height: 1.15; margin: 0 0 16px; font-weight: 700; }
+    .hero .intro { max-width: 640px; color: var(--muted); font-size: 18px; margin: 0 0 28px; }
+    .lead-box { background: linear-gradient(135deg, #f0fdfa 0%, #ffffff 100%); border: 1.5px solid var(--primary); border-radius: var(--radius); padding: 40px; text-align: center; margin-bottom: 40px; }
+    .lead-box h2 { margin: 0 0 12px; font-size: 22px; font-weight: 600; }
+    .lead-box p { margin: 0 0 24px; color: var(--muted); font-size: 16px; }
+    .btn { display: inline-block; background: var(--primary); color: #fff; padding: 16px 36px; border-radius: 10px; font-size: 17px; font-weight: 600; transition: background 0.2s ease; }
+    .btn:hover { background: var(--primary-dark); color: #fff; }
+    .section { padding: 16px 0 40px; }
+    .section-title { font-size: 22px; margin: 0 0 16px; font-weight: 600; }
+    .value-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-bottom: 32px; }
+    .value-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
+    .value-card h3 { margin: 0 0 8px; font-size: 17px; font-weight: 600; }
+    .value-card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
+    .step-list { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
+    .step-list h3 { margin: 0 0 16px; font-size: 18px; font-weight: 600; }
+    .step-list ol { margin: 0; padding-left: 20px; color: var(--muted); font-size: 15px; line-height: 1.9; }
+    .step-list li { margin-bottom: 6px; }
+    .step-list strong { color: var(--text); }
+    .next-box { background: #f0fdfa; border: 1.5px solid var(--primary); border-radius: var(--radius); padding: 24px; margin: 32px 0; }
+    .next-box h3 { margin: 0 0 10px; font-size: 18px; font-weight: 600; color: var(--primary-dark); }
+    .next-box p { margin: 0; color: var(--text); font-size: 15px; }
+    .next-box a { font-weight: 600; }
+    .bottom-cta { text-align: center; padding: 20px 0 64px; }
+    .btn-outline { display: inline-block; background: transparent; color: var(--primary); border: 1.5px solid var(--primary); padding: 14px 28px; border-radius: 10px; font-size: 16px; font-weight: 600; transition: background 0.2s ease; margin: 0 6px 10px; }
+    .btn-outline:hover { background: #f0fdfa; color: var(--primary-dark); }
+    .site-footer { border-top: 1px solid var(--line); padding: 24px 0 40px; color: var(--muted); font-size: 14px; text-align: center; }
+    @media (max-width: 768px) { h1 { font-size: 30px; } .header-inner { flex-direction: column; align-items: flex-start; gap: 12px; } .hero { padding-top: 36px; } .lead-box { padding: 28px 20px; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">AI 站长工作流目录</div>
+      <nav class="nav">
+        <a href="index.html">首页</a>
+        <a href="categories.html">分类页</a>
+        <a href="tools-resource-hub.html">资源总入口</a>
+        <a href="starter-kit.html" class="active">起步包</a>
+        <a href="about.html">关于本站</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">首页</a> › <a href="tools-resource-hub.html">资源总入口</a> › <span>新手 AI 建站起步包</span>
+      </div>
+    </div>
+
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow">免费速查包</div>
+        <h1>新手第一个网站该怎么开始？</h1>
+        <p class="intro">不用翻 10 篇文章，30 分钟看完这份速查包，直接动手建站。</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="lead-box" id="download">
+          <h2>📦 新手 AI 建站起步包</h2>
+          <p>含：工具选择结论速查表 + 6 步路线图 + 12 条避坑清单 + 网站模板结构</p>
+          <a href="#" class="btn">免费下载起步包</a>
+          <p style="margin-top: 16px; font-size: 13px; color: var(--muted);">完整版含可编辑模板和 affiliate 优惠码，后续邮件更新。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <h2 class="section-title">下载后你能得到什么</h2>
+        <div class="value-grid">
+          <div class="value-card">
+            <h3>✅ 工具选择结论</h3>
+            <p>按 4 个目标直接匹配：快速上线选 Wix，长期 SEO 选 WordPress，零成本选 GitHub Pages，设计感选 Framer。</p>
+          </div>
+          <div class="value-card">
+            <h3>✅ 6 步路线图</h3>
+            <p>从确定目标到上线，每一步该做什么、避什么坑。按顺序走，不需要回头重做。</p>
+          </div>
+          <div class="value-card">
+            <h3>✅ 12 条避坑清单</h3>
+            <p>新手最容易犯的建站错误，提前知道比踩坑后补救省 10 倍时间。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="step-list">
+          <h3>起步 6 步（按顺序走）</h3>
+          <ol>
+            <li><strong>明确目标：</strong>做博客、作品集、落地页还是电商？<a href="website-tool-recommendation.html">去推荐页快速匹配工具 →</a></li>
+            <li><strong>选建站工具：</strong>WordPress / Wix / Framer / GitHub Pages 四选一。</li>
+            <li><strong>买域名 + 配主机：</strong>建议 .com 或 .io，主机按工具要求配置。</li>
+            <li><strong>搭 4 个核心页面：</strong>首页、关于页、内容页、联系页。<a href="first-website-roadmap.html">查看路线图第 4 步 →</a></li>
+            <li><strong>做 SEO 基础：</strong>标题、描述、站点地图、canonical 标签。</li>
+            <li><strong>上线 + 迭代：</strong>不要追求完美，先上线，根据数据优化。</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="next-box">
+        <h3>下一步去哪里</h3>
+        <p>看完起步包后，直接去 <a href="website-tool-recommendation.html">编辑建议页</a> 选定你的建站工具，今天就开始注册。或者返回 <a href="tools-resource-hub.html">资源总入口</a> 查看完整工具目录。</p>
+      </div>
+    </div>
+
+    <section class="bottom-cta">
+      <div class="container">
+        <a href="website-tool-recommendation.html" class="btn">查看编辑建议</a>
+        <a href="first-website-roadmap.html" class="btn-outline">查看新手路线图</a>
+        <a href="tools-resource-hub.html" class="btn-outline">返回资源总入口</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 AI 站长工作流目录 · 面向中文出海创作者的工具与工作流站。</p>
+    </div>
+  </footer>
+</body>
+</html>
